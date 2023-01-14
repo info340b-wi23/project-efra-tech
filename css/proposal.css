@@ -2,3 +2,26 @@ p ul ol li{
     font: 'Helvetica Neue';
     font-size: 20px;
 }
+
+body {
+  background-color: lightgoldenrodyellow;
+}
+
+h1, section {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background-color: #E8E8E8;
+  border: 6px solid black;
+  margin: 20px;
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
