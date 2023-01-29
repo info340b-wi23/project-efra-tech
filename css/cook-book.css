@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+    padding-top: 2rem;
+}
+
+header .container-head {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 20vh;
+    background-color: #BFB4C7;
+}
+
+.container-head>* {
+    font-weight: 300;
+    font-family: "Raleway", "Helvetica", sans-serif;
+    color: white;
+}
+
+.container-head h1 {
+    font-weight: 700;
+    font-size: 66px;
+}
+
+.container-head div:first-child {
+    flex-basis: 50%;
+    padding-left: 8rem;
+}
+
+#add-album {
+    color: white;
+    border-color: white;
+}
+
+#add-album:hover {
+    background-color: #34005A;
+}
+
+.container-head div:last-child {
+    flex-basis: 20%;
+    margin-left: auto;
+}
+
+.album-modify {
+    display: inline;
+}
+
+.album-modify>* {
+    display: inline-block;
+}
+
+.album-modify button {
+    width: 30%;
+}
+
+.album-modify input {
+    width: 60%;
+}
+
+.container-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+    background-color: #BFB4C7;
+}
+
+.footer-info {
+    width: 250px;
+    height: 150px;
+    text-align: center;
+}
+
+.footer-info .item {
+    display: block;
+}
+
+.footer-info a {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    padding-bottom: 8px;
+}
+
+.footer-info a:first-child {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 46px;
+    color: #34005A;
+}
