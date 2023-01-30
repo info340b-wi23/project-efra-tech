@@ -18,6 +18,7 @@ footer {
     padding-top: 2rem;
 }
 
+
 header .container-head {
     display: flex;
     align-items: center;
@@ -117,6 +118,8 @@ header .container-head {
     height: 295px;
     width: 295px;
 }
+
+/* footer */
 
 .container-footer {
     display: flex;
