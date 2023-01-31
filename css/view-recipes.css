@@ -178,3 +178,14 @@ header .container-head {
   line-height: 46px;
   color: #34005A;
 }
+
+form label, h2 {
+  color: black;
+  text-align: center;
+}
+
+#uploadModal * {
+  padding: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
