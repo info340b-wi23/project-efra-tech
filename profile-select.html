@@ -15,22 +15,101 @@
 <body>
     <!-- Page header -->
     <header>
-        <nav>
-            navigation links in here
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Our Family</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Calendar</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Albums
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">All Photos</a>
+                            <a class="dropdown-item" href="#">Kids</a>
+                            <a class="dropdown-item" href="#">Vacation</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cook Book</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Welcome, Max
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Switch User</a>
+                            <a class="dropdown-item" href="#">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </nav>
+        <div class="container-head">
+            <h1>Choose Profile:</h1>
+        </div>
     </header>
 
     <!-- Main page content -->
-    <main>
-        <section>
-        </section>
-        <section>
-        </section>
+    <main class="container-main d-flex">
+        <div class="card">
+            <img src="./images/person_one.jpeg" class="card-img-top" alt="Profile 1">
+            <div class="card-body">
+                <h1 class="card-title">Profile 1</h1>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./images/person_two.jpeg" class="card-img-top" alt="Profile 2">
+            <div class="card-body">
+                <h1 class="card-title">Profile 2</h1>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./images/person_one.jpeg" class="card-img-top" alt="Profile 3">
+            <div class="card-body">
+                <h1 class="card-title">Profile 3</h1>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./images/person_four.jpeg" class="card-img-top" alt="Profile 4">
+            <div class="card-body">
+                <h1 class="card-title">Profile 4</h1>
+            </div>
+        </div>
+        <div class="container d-flex">
+            <div class="align-self-center">
+                <button class="profile-editor" type="button" style="background-color: #BFB4C7;">Edit Profile</button>
+            </div>
+        </div>
     </main>
 
     <!-- Page footer -->
     <footer>
-        copyright information here
+        <div class="container-footer">
+            <div class="footer-info">
+                <a href="#" class="item">Family Planner</a>
+                <a href="#"v class="item">Home</a>
+                <a href="#" class="item">FAQ</a>
+            </div>
+            <div class="footer-info">
+                <a href="#" class="item">Follow Us</a>
+                <a href="#" class="item">Facebook</a>
+                <a href="#" class="item">Instagram</a>
+            </div>
+        </div>
     </footer>
 </body>
 
