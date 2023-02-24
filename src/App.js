@@ -4,22 +4,21 @@ import Home from './components/Home';
 import Register from './components/Register';
 
 function App() {
-    return (
-        <Router>
-            <div className="App">
-                <div className="content">
-                <Routes>
-                    <Route exact path="/">
-                        <Register />
-                    </Route>
-                    <Route path="/home">
-                        <Home />
-                    </Route>
-                </Routes>
-            </div>
+  return (
+    <Router>
+      <div className="App">
+        <div className="content">
+          <Routes>
+            <Route exact path="/" element={<Register/>} />
+            <Route path="/home/*" element={<Home/>} />
+          </Routes>
         </div>
-        </Router>
+      </div>
+    </Router>
   );
 }
 
 export default App;
+
+
+
