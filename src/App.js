@@ -21,16 +21,16 @@ function App(props) {
       <main>
         <Navbar />
         <Router>
-          <div className="App">
-            <div className="content">
-              <Routes>
-                <Route exact path="/" element={<Register/>} />
-                <Route path="/home/*" element={<Home/>} />
-              </Routes>
-            </div>
-          </div>
+          <Routes>
+            <Route exact path="/" element={<Register/>} />
+            <Route path="/home/*" element={<Home/>} />
+          </Routes>
         </Router>
       </main>
+
+      <footer>
+        copyright information here
+      </footer>
     </div>
   );
 }
