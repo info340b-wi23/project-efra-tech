@@ -8,10 +8,9 @@ import ProfileSelect from './ProfileSelect';
 function Home() {
   return (
     <div className="App">
-      <h1>Hello</h1>
       <div className="content">
         <Routes>
-          <Route path="/" element={<Navigate to="/calendar" />} />
+          <Route path="/" element={<Navigate to="/home/calendar" />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/photo-album" element={<PhotoAlbum />} />
           <Route path="/cook-book" element={<CookBook />} />
