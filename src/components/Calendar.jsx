@@ -6,7 +6,7 @@ import Footer from './Footer';
 const Calendar = () => {
   return (
     <body>
-      <Header />
+      {/* <Header /> */}
       <main>
         <div className="calendar">
           <

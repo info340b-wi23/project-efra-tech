@@ -4,7 +4,7 @@ export default function NavBar(props) {
   return(
     <header>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a className="navbar-brand" href="./components/Home">Our Family</a>
+            <a className="navbar-brand" href="./components/Home.jsx">Our Family</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -13,7 +13,7 @@ export default function NavBar(props) {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
-                        <a className="nav-link" href="/home/Home">Home <span className="sr-only"></span></a>
+                        <a className="nav-link" href="/home/home-page">Home <span className="sr-only"></span></a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="/home/calendar">Calendar</a>
@@ -32,7 +32,7 @@ export default function NavBar(props) {
                           Welcome, Max
                       </a>
                       <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a className="dropdown-item" href="./components/ProfileSelect">Switch User</a>
+                          <a className="dropdown-item" href="./components/ProfileSelect.jsx">Switch User</a>
                           <a className="dropdown-item" href="./">Logout</a>
                       </div>
                   </li>

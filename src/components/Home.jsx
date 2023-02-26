@@ -4,13 +4,17 @@ import Calendar from './Calendar';
 import CookBook from './CookBook';
 import PhotoAlbum from './PhotoAlbum';
 import ProfileSelect from './ProfileSelect';
+import Navbar from './Navbar';
+import HomePage from './HomePage';
 
 function Home() {
   return (
     <div className="App">
+      <Navbar />
       <div className="content">
         <Routes>
           <Route path="/" element={<Navigate to="/home/calendar" />} />
+          <Route path="/home-page" element={<HomePage />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/photo-album" element={<PhotoAlbum />} />
           <Route path="/cook-book" element={<CookBook />} />
