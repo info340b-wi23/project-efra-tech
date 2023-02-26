@@ -58,7 +58,6 @@ const Calendar = () => {
           />
         </div>
       </main>
-      <Footer/>
     </body>
   );
 }
