@@ -4,11 +4,11 @@ export default function PhotoAlbum(props) {
   return (
     <div>
       <div className="container-head">
-        <div className="header-item">
+        <div className="header-item py-4">
           <h1>Album Overview</h1>
           <p className="motto"><i>Archive your memories</i></p>
         </div>
-        <div className="header-item">
+        <div className="header-item pb-3">
           <form className="album-modify">
             <button type="button" id="add-album" className="btn btn-outline-success my-2 my-sm-0">+ New</button>
             <input className="form-control" type="search" placeholder="Search" aria-label="Search"/>
