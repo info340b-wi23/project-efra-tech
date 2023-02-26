@@ -19,7 +19,6 @@ function App(props) {
       </head>
 
       <main>
-        <Navbar />
         <Router>
           <Routes>
             <Route exact path="/" element={<Register/>} />
@@ -27,21 +26,6 @@ function App(props) {
           </Routes>
         </Router>
       </main>
-
-      <footer>
-        <div className="container-footer">
-              <div className="footer-info">
-                  <a href="./" className="item">Family Planner</a>
-                  <a href="./" className="item">Home</a>
-                  <a href="./" className="item">FAQ</a>
-              </div>
-              <div className="footer-info">
-                  <a href="./" className="item">Follow Us</a>
-                  <a href="./" className="item">Facebook</a>
-                  <a href="./" className="item">Instagram</a>
-              </div>
-          </div>
-      </footer>
     </div>
   );
 }
