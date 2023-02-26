@@ -5,6 +5,7 @@ import CookBook from './CookBook';
 import PhotoAlbum from './PhotoAlbum';
 import ProfileSelect from './ProfileSelect';
 import Header from './Header';
+import HomePage from './HomePage';
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
         <Header/>
         <Routes>
           <Route path="/" element={<Navigate to="/home/calendar" />} />
+          <Route path="/home-page" element={<HomePage />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/photo-album" element={<PhotoAlbum />} />
           <Route path="/cook-book" element={<CookBook />} />
