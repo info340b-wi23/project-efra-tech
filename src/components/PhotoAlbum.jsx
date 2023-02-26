@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-const PhotoAlbum = () => {
+const PhotoAlbum = (props) => {
     return (
       <div className="photoalbum">
         <h2>PhotoAlbum page</h2>
