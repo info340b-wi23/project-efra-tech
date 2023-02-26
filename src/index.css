@@ -28,6 +28,9 @@ main img {
 footer {
     margin-top: auto;
     padding-top: 2rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .container-footer {

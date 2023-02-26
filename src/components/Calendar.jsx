@@ -5,8 +5,6 @@ import Footer from './Footer';
 
 const Calendar = () => {
   return (
-    <body>
-      <main>
         <div className="calendar">
           <
             RevoCalendar
@@ -57,8 +55,6 @@ const Calendar = () => {
             detailDateFormat="DD/MM/YYYY"
           />
         </div>
-      </main>
-    </body>
   );
 }
 
