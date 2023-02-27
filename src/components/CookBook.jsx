@@ -1,11 +1,20 @@
 import React from 'react';
+import { Card } from './Cards';
 
-const CookBook = () => {
-    return (
-      <div className="cookbook">
-        <h2>Cookbook page</h2>
-      </div>
-    );
-  }
+export default function CookBook(props) {
 
-export default CookBook;
+  return (
+    <main class='container-main'>
+        <Card
+          imageUrl="/images/baked-fish.webp"
+          title="Baked Fish with Parmesan Breadcrumbs"
+          linkUrl="/home/cook-book"
+        />
+        <Card
+          imageUrl="/images/pan-seared-tilapia.jpeg"
+          title="Pan-Seared Tilapia"
+          linkUrl="/home/cook-book"
+        />
+    </main>
+  );
+}
