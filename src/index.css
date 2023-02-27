@@ -40,6 +40,7 @@ header .container-head {
   font-weight: 300;
   font-family: "Raleway", "Helvetica", sans-serif;
   color: white;
+  width: 100%;
 }
 
 .container-head h1 {
@@ -92,53 +93,49 @@ header .container-head {
 }
 
 .container-main {
-    width:100%;
-    height:100%;
 
-    margin-top:0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    flex-wrap: wrap;
+  margin-top: 0px;
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+  flex-wrap: wrap;
 }
 
-.container-main>* {
-    width: 15%;
-    margin-top: 4rem;
-    border: none;
+.container-main > * {
+  width: 15%;
+  margin-left: 6rem;
+  margin-top: 4rem;
+  border: none;
 }
 
 /* cards  */
 
 .card-img {
-    box-shadow: 0px 0px 10px #000000;
-    object-fit: cover;
-    height: 195px;
-    width: 100%;
+  box-shadow: 0px 0px 10px #000000;
+  object-fit: cover;
+  height: 195px;
+  width: 100%;
 }
 
 .card:hover .card-img {
-    opacity: 0.5;
-    cursor: pointer;
-    border: #34005A 10px;
-    border-bottom: 2px solid #34005A;
+  opacity: 0.5;
+  cursor: pointer;
+  border: #34005A 10px;
+  border-bottom: 2px solid #34005A;
 }
 
 .card p {
-    font-weight: 300;
-    font-family: "Raleway", "Helvetica", sans-serif;
-    color: white;
-    font-weight: 500;
-    font-size: 32px;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.72);
+  font-family: "Raleway", "Helvetica", sans-serif;
+  color: white;
+  font-weight: 500;
+  font-size: 32px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.72);
 }
 
 .card {
-    height: 295px;
-    width: 295px;
+  height: 295px;
+  width: 295px;
 }
-
 
 footer {
   margin-top: auto;
@@ -152,7 +149,9 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   height: 20vh;
+  width: 100%;
   background-color: #BFB4C7;
 }
 
@@ -168,16 +167,17 @@ footer {
 
 .footer-info a {
   font-weight: 400;
-  font-size: 20px;
-  line-height: 24px;
-  padding-bottom: 8px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding-bottom: 0.25em;
 }
 
 .footer-info a:first-child {
   font-weight: 400;
-  font-size: 24px;
-  line-height: 46px;
+  font-size: 1.5rem;
+  line-height: 1em;
   color: #34005A;
+  padding-top: 3rem;
 }
 
 .container-head {
@@ -197,4 +197,78 @@ footer {
   cursor: pointer;
   border: #34005A 10px;
   border-bottom: 2px solid #34005A;
+}
+
+.calendar {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 10px) and (max-width: 1200px) {
+  .footer-info .item {
+    overflow: hidden;
+  }
+
+  .footer-info a {
+    font-size: 1rem;
+    line-height: 1rem;
+    padding-bottom: 0.25em;
+  }
+
+  .footer-info a:first-child {
+    font-size: 1.5rem;
+    line-height: 1em;
+    padding-top: 3rem;
+  }
+
+  .container-head h1 {
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .container-head div:first-child {
+    flex-basis: 50%;
+    padding-left: 2rem;
+  }
+
+  header .container-head {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 20vh;
+    background-image: url('./images/album-page-cover.jpg');
+    background-size: cover;
+    background-color: #0084af;
+    background-position: center;
+    width: 100%;
+  }
+
+  .container-head > * {
+    font-weight: 300;
+    font-family: "Raleway", "Helvetica", sans-serif;
+    color: white;
+    width: 100%;
+  }
+
+  #add-album {
+    font-size: 0.25em;
+    width: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .form-control {
+    height: 13px;
+    width: 20%;
+  }
+
+  .container-main {
+    padding-bottom: 50%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .card {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
