@@ -2,9 +2,8 @@ import React from "react";
 export function Card({ imageUrl, title, linkUrl }) {
 
     const handleClick = () => {
-        window.location.href = '/home/album-name';
+        window.location.href = `/home/${linkUrl}`;
     };
-
 
     return (
         <div className="card" onClick={handleClick}>

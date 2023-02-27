@@ -1,15 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-export default function Header(props) {
+export default function Header({ onSearch }) {
     const location = useLocation();
     const showJumbotron = location.pathname === "/home/photo-album" || location.pathname === "/home/cook-book";
+    const [query, setQuery] = useState("");
+
+    const handleInputChange = (event) => {
+        const value = event.target.value;
+        setQuery(value);
+    };
+
+    useEffect(() => {
+        onSearch(query);
+    }, [query, onSearch]);
+
     let details = {};
-    if(location.pathname === "/home/photo-album") {
-        details = {headerName:"Photo Album", description: "Archive your memories", image: "/images/album-page-cover.jpg"}
+    if (location.pathname === "/home/photo-album") {
+        details = { headerName: "Photo Album", description: "Archive your memories", image: "/images/album-page-cover.jpg" }
     }
-    if(location.pathname === "/home/cook-book") {
-        details = {headerName:"Cook Book", description: "One place for Family recipes", image: "/images/cookbook_real_image.jpeg"}
+    if (location.pathname === "/home/cook-book") {
+        details = { headerName: "Cook Book", description: "One place for Family recipes", image: "/images/cookbook_real_image.jpeg" }
+    }
+
+    function Jumbotron(props) {
+        const { headerName, description, image } = props.details;
+        const link = `url('${image}')`
+        return (
+            <div className="container-head" style={{ backgroundImage: link }}>
+                <div className="header-item">
+                    <h1>{headerName}</h1>
+                    <p className="motto"><i>{description}</i></p>
+                </div>
+                <div className="header-item">
+                    <form className="album-modify">
+                        <button type="button" className="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#uploadModal" data-whatever="@mdo"> + New</button>
+                        <input key="search-input" className="form-control" type="text" placeholder="Search" aria-label="Search" value={query} onChange={handleInputChange} />
+                    </form>
+                </div>
+            </div>
+        );
     }
 
     return (
@@ -39,7 +69,7 @@ export default function Header(props) {
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Welcome, {props.profile}
+                                Welcome, Max
                             </a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a className="dropdown-item" href="/home/profile-select">Switch User</a>
@@ -49,27 +79,7 @@ export default function Header(props) {
                     </ul>
                 </div>
             </nav>
-            {showJumbotron && <Jumbotron details={details}/>}
+            {showJumbotron && <Jumbotron details={details} />}
         </header>
     );
 };
-
-function Jumbotron(props) {
-    const {headerName, description, image} = props.details;
-    const link = `url('${image}')`
-    console.log(link)
-    return (
-        <div className="container-head" style={{ backgroundImage: link }}>
-            <div className="header-item">
-                <h1>{headerName}</h1>
-                <p className="motto"><i>{description}</i></p>
-            </div>
-            <div className="header-item">
-                <form className="album-modify">
-                    <button type="button" id="add-album" className="btn btn-outline-success my-2 my-sm-0">+ New</button>
-                    <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
-                </form>
-            </div>
-        </div>
-    );
-}
