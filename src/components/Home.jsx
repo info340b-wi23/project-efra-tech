@@ -5,6 +5,7 @@ import CookBook from './CookBook';
 import PhotoAlbum from './PhotoAlbum';
 import ProfileSelect from './ProfileSelect';
 import Header from './Header';
+import PhotoGallery from './PhotoGallery';
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
           <Route path="/photo-album" element={<PhotoAlbum />} />
           <Route path="/cook-book" element={<CookBook />} />
           <Route path="/profile-select" element={<ProfileSelect />} />
+          <Route path="/photo-gallery" element={<PhotoGallery />} />
         </Routes>
       </div>
     </div>
