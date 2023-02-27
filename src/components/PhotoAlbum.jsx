@@ -1,4 +1,5 @@
 import React from 'react';
+import { CardThumbnail } from './Cards';
 
 export default function PhotoAlbum(props) {
   return (
@@ -18,28 +19,14 @@ export default function PhotoAlbum(props) {
         </div>
       </div>
 
-
-      <div className="container-main">
-        <div className="card">
-          <img src="images/all-images-cover.jpg" className="card-img" alt="album cover"/>
-          <div className="card-img-overlay d-flex align-items-center">
-            <p className="card-title text-center mx-auto">All Images</p>
-          </div>
-        </div>
-        <div className="card">
-          <img src="images/kids-album-cover1.jpg" className="card-img" alt="album cover"/>
-          <div className="card-img-overlay d-flex align-items-center">
-              <p className="card-title text-center mx-auto">Kids</p>
-          </div>
+      <div className='container d-flex'>
+        <div className='row justify-content-md-around'>
+          <CardThumbnail title='Breakfast at Lakeside'/>
+          <CardThumbnail title='Christmas in Cabo'/>
+          <CardThumbnail title='Christmas in Cabo'/>
         </div>
       </div>
 
     </div>
-  );
-}
-
-function AlbumThumbnail(props) {
-  return(
-    <p>hello</p>
   );
 }
