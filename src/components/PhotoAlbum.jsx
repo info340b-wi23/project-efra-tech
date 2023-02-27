@@ -8,7 +8,7 @@ export default function PhotoAlbum(props) {
     <div>
 
       <div className='container'>
-        <div className='row d-flex justify-content-md-around'>
+        <div className='row justify-content-md-around mt-5'>
           <CardThumbnail title='Breakfast at Lakeside' url='./PhotoGallery' type='album'/>
           <CardThumbnail title='Christmas in Cabo' url='./PhotoGallery' type='album'/>
           <CardThumbnail title='Christmas in Cabo' url='./PhotoGallery' type='album'/>

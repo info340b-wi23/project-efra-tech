@@ -12,8 +12,8 @@ export function CardThumbnail(props) {
   }
 
   return(
-    <div className='card m-2' onClick={handleClick}>
-      <h1 className="card-title text-center mx-auto">{props.title}</h1>
+    <div className='card m-2 col-2 text-center py-5' onClick={handleClick}>
+      {props.title}
     </div>
   );
 }
