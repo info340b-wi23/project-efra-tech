@@ -8,18 +8,18 @@ import Header from './Header';
 import PhotoGallery from './PhotoGallery';
 import HomePage from './HomePage';
 
-function Home() {
+function Home({profile, setCurrentProfile}) {
   return (
     <div className="App">
       <div className="content">
-        <Header/>
+        <Header profile={profile}/>
         <Routes>
           <Route path="/" element={<Navigate to="/home/calendar" />} />
           <Route path="/home-page" element={<HomePage />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/photo-album" element={<PhotoAlbum />} />
           <Route path="/cook-book" element={<CookBook />} />
-          <Route path="/profile-select" element={<ProfileSelect />} />
+          <Route path="/profile-select" element={<ProfileSelect setCurrentProfile={setCurrentProfile} />} />
           <Route path="/photo-gallery" element={<PhotoGallery />} />
         </Routes>
       </div>

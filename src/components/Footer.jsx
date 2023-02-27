@@ -3,16 +3,16 @@ import React from 'react'
 export default function Footer() {
     return (
         <footer>
-            <div class="container-footer">
-                <div class="footer-info">
-                    <a href="#" class="item">Family Planner</a>
-                    <a href="#" v class="item">Home</a>
-                    <a href="#" class="item">FAQ</a>
+            <div className="container-footer">
+                <div className="footer-info">
+                    <a href="#" className="item">Family Planner</a>
+                    <a href="#" className="item">Home</a>
+                    <a href="#" className="item">FAQ</a>
                 </div>
-                <div class="footer-info">
-                    <a href="#" class="item">Follow Us</a>
-                    <a href="#" class="item">Facebook</a>
-                    <a href="#" class="item">Instagram</a>
+                <div className="footer-info">
+                    <a href="#" className="item">Follow Us</a>
+                    <a href="#" className="item">Facebook</a>
+                    <a href="#" className="item">Instagram</a>
                 </div>
             </div>
         </footer>
