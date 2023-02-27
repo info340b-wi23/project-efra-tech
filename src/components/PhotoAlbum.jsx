@@ -18,3 +18,12 @@ export default function PhotoAlbum(props) {
     </div>
   );
 }
+
+export function AddAlbumButton(props) {
+  function handleClick(event){}
+  return (
+    <button type="button" id="add-album" className="btn btn-outline-success my-2 my-sm-0" onClick={handleClick}>
+      + New
+    </button>
+  );
+}

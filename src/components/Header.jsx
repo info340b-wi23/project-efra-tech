@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import { AddAlbumButton } from "./PhotoAlbum";
 
 export default function Header(props) {
     const location = useLocation();
@@ -55,7 +56,7 @@ function Jumbotron() {
             </div>
             <div className="header-item">
                 <form className="album-modify">
-                    <button type="button" id="add-album" className="btn btn-outline-success my-2 my-sm-0">+ New</button>
+                    <AddAlbumButton />
                     <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
                 </form>
             </div>
@@ -63,4 +64,4 @@ function Jumbotron() {
 
     );
 
-} 
+}
