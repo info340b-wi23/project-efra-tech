@@ -83,7 +83,17 @@ header .container-head {
   width: 60%;
 }
 
+.container-main-div {
+    width: 100%;
+    height:100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .container-main {
+
   margin-top: 0px;
   display: flex;
   align-items: center;
