@@ -23,7 +23,7 @@ function Home() {
           <Route path="/home-page" element={<HomePage />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/photo-album" element={<PhotoAlbum searchQuery={searchQuery} />} />
-          <Route path="/cook-book" element={<CookBook />} />
+          <Route path="/cook-book" element={<CookBook searchQuery={searchQuery} />} />
           <Route path="/profile-select" element={<ProfileSelect />} />
           <Route path="/photo-gallery" element={<PhotoGallery />} />
         </Routes>
