@@ -25,9 +25,69 @@ main img {
     box-shadow: 0px 0px 5px #000000;
 }
 
+header .container-head {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 20vh;
+    background-image: url('./images/album-page-cover.jpg');
+    background-size: cover;
+    background-color: #0084af;
+    background-position: center;
+}
+
+.container-head>* {
+    font-weight: 300;
+    font-family: "Raleway", "Helvetica", sans-serif;
+    color: white;
+}
+
+.container-head h1 {
+    font-weight: 700;
+    font-size: 66px;
+}
+
+.container-head div:first-child {
+    flex-basis: 50%;
+    padding-left: 8rem;
+}
+
+#add-album {
+    color: white;
+    border-color: white;
+}
+
+#add-album:hover {
+    background-color: #34005A;
+}
+
+.container-head div:last-child {
+    flex-basis: 20%;
+    margin-left: auto;
+}
+
+.album-modify {
+    display: inline;
+}
+
+.album-modify>* {
+    display: inline-block;
+}
+
+.album-modify button {
+    width: 30%;
+}
+
+.album-modify input {
+    width: 60%;
+}
+
 footer {
     margin-top: auto;
     padding-top: 2rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .container-footer {
@@ -65,6 +125,4 @@ footer {
 .container-head {
     background-color: rgb(164, 88, 184);
     height: 17em;
-    border-radius: 0 0 5% 5%;
 }
-
