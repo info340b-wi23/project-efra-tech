@@ -1,84 +1,85 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
-    align-items: center;
-    text-align: center;
-    margin-top: 12vh;
-    margin-left: 20%;
-    margin-right: 20%;
+  align-items: center;
+  text-align: center;
+  margin-top: 12vh;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 main img {
-    box-shadow: 0px 0px 5px #000000;
+  box-shadow: 0px 0px 5px #000000;
 }
 
 header .container-head {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: 20vh;
-    background-size: cover;
-    background-color: #0084af;
-    background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 20vh;
+  background-image: url('./images/album-page-cover.jpg');
+  background-size: cover;
+  background-color: #0084af;
+  background-position: center;
 }
 
-.container-head>* {
-    font-weight: 300;
-    font-family: "Raleway", "Helvetica", sans-serif;
-    color: white;
+.container-head > * {
+  font-weight: 300;
+  font-family: "Raleway", "Helvetica", sans-serif;
+  color: white;
 }
 
 .container-head h1 {
-    font-weight: 700;
-    font-size: 66px;
+  font-weight: 700;
+  font-size: 66px;
 }
 
 .container-head div:first-child {
-    flex-basis: 50%;
-    padding-left: 8rem;
+  flex-basis: 50%;
+  padding-left: 8rem;
 }
 
 #add-album {
-    color: white;
-    border-color: white;
+  color: white;
+  border-color: white;
 }
 
 #add-album:hover {
-    background-color: #34005A;
+  background-color: #34005A;
 }
 
 .container-head div:last-child {
-    flex-basis: 20%;
-    margin-left: auto;
+  flex-basis: 20%;
+  margin-left: auto;
 }
 
 .album-modify {
-    display: inline;
+  display: inline;
 }
 
-.album-modify>* {
-    display: inline-block;
+.album-modify > * {
+  display: inline-block;
 }
 
 .album-modify button {
-    width: 30%;
+  width: 30%;
 }
 
 .album-modify input {
-    width: 60%;
+  width: 60%;
 }
 
 .container-main {
@@ -129,41 +130,60 @@ header .container-head {
 
 
 footer {
-    margin-top: auto;
-    padding-top: 2rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+  margin-top: auto;
+  padding-top: 2rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .container-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 20vh;
-    background-color: #BFB4C7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20vh;
+  background-color: #BFB4C7;
 }
 
 .footer-info {
-    width: 250px;
-    height: 150px;
-    text-align: center;
+  width: 250px;
+  height: 150px;
+  text-align: center;
 }
 
 .footer-info .item {
-    display: block;
+  display: block;
 }
 
 .footer-info a {
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    padding-bottom: 8px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  padding-bottom: 8px;
 }
 
 .footer-info a:first-child {
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 46px;
-    color: #34005A;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 46px;
+  color: #34005A;
+}
+
+.container-head {
+  background-color: rgb(164, 88, 184);
+  height: 17em;
+}
+
+.row .card {
+  background-size: cover;
+  background-color: #f4f4f4;
+  background-position: center;
+  width: 30%;
+}
+
+.row .card:hover {
+  opacity: 0.5;
+  cursor: pointer;
+  border: #34005A 10px;
+  border-bottom: 2px solid #34005A;
 }
