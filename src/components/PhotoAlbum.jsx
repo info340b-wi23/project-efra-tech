@@ -19,8 +19,8 @@ export default function PhotoAlbum(props) {
         </div>
       </div>
 
-      <div className='container d-flex'>
-        <div className='row justify-content-md-around'>
+      <div className='container'>
+        <div className='row d-flex justify-content-md-around'>
           <CardThumbnail title='Breakfast at Lakeside'/>
           <CardThumbnail title='Christmas in Cabo'/>
           <CardThumbnail title='Christmas in Cabo'/>
