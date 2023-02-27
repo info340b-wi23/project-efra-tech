@@ -36,7 +36,7 @@ export default function PhotoAlbum(props) {
   );
 }
 
-// MODAL FOR UPLOADING NOT WORKING
+// MODAL FOR UPLOADING NOT FUNCTIONING
 //
 export function AddAlbumButton(props) {
   const [modalShow, setModalShow] = useState(false);

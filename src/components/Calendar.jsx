@@ -11,7 +11,7 @@ const Calendar = () => {
           RevoCalendar
           style={{
             borderRadius: "5px",
-            border: "5px solid #4F6995"
+            border: "5px solid #4F6995",
           }}
           highlightToday={true}
           lang="en"
@@ -56,6 +56,7 @@ const Calendar = () => {
           detailDateFormat="DD/MM/YYYY"
         />
       </div>
+      {/* <div className='calendar-error-resolve'>Calendar is only visible on larger screens!</div> */}
     </main>
   );
 }

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { AddAlbumButton } from "./PhotoAlbum";
 
 export default function Header({ onSearch }) {
     const location = useLocation();
@@ -35,7 +34,6 @@ export default function Header({ onSearch }) {
                 </div>
                 <div className="header-item">
                     <form className="album-modify">
-                        {/* <AddAlbumButton /> */}
                         <button type="button" className="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#uploadModal" data-whatever="@mdo"> + New</button>
                         <input key="search-input" className="form-control" type="text" placeholder="Search" aria-label="Search" value={query} onChange={handleInputChange} />
                     </form>
@@ -85,4 +83,3 @@ export default function Header({ onSearch }) {
         </header>
     );
 };
-
