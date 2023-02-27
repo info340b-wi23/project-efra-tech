@@ -56,7 +56,8 @@ function Jumbotron() {
             </div>
             <div className="header-item">
                 <form className="album-modify">
-                    <AddAlbumButton />
+                    {/* <AddAlbumButton /> */}
+                    <button type="button" className="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#uploadModal" data-whatever="@mdo"> + New</button>
                     <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
                 </form>
             </div>
