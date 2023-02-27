@@ -9,17 +9,15 @@
     <title>Family folks</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/photo-album.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" type="image/x-icon" href="images/icons8-home-page-16.png">
 </head>
 
 <body>
     <!-- Page header -->
     <header>
-        <!-- refer: https://www.codeply.com/p/P0KN7DNsEq -->
-        <!-- here ms-auto is same as margin-left: auto which can be used to align a flexbox item to right.  -->
-        <!-- Refer: https://www.google.com/search?q=align+last+flex+item+to+the+right&rlz=1C5CHFA_enUS1018US1018&sxsrf=AJOqlzXASYB45SE2SrZouzyZ0rQJM9GJ-g%3A1674937423455&ei=T4TVY6u2G8GC0PEPwdGH-AM&ved=0ahUKEwjrmZWRjOv8AhVBATQIHcHoAT8Q4dUDCBA&uact=5&oq=align+last+flex+item+to+the+right&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIGCAAQCBAeMgUIABCGAzIFCAAQhgM6CggAEEcQ1gQQsAM6BggAEAcQHjoICAAQBRAHEB46CAgAEAgQHhANOgcIABANEIAEOggIABAIEAcQHkoECEEYAEoECEYYAFC7EVjRHmDoIGgBcAF4AIABa4gBhASSAQM2LjGYAQCgAQHIAQjAAQE&sclient=gws-wiz-serp -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Our Family</a>
+            <a class="navbar-brand" href="index.html">Our Family</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -27,24 +25,25 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+                        <a class="nav-link" href="profile-select.html">Switch User <span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Calendar</a>
+                        <a class="nav-link" href="index.html">Calendar</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle" href="photo-album.html" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Albums
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">All Photos</a>
-                            <a class="dropdown-item" href="#">Kids</a>
-                            <a class="dropdown-item" href="#">Vacation</a>
+                            <a class="dropdown-item" href="photo-album.html">View Albums</a>
+                            <a class="dropdown-item" href="album-name.html">All Photos</a>
+                            <a class="dropdown-item" href="album-name.html">Kids</a>
+                            <a class="dropdown-item" href="album-name.html">Vacation</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cook Book</a>
+                        <a class="nav-link" href="cook-book.html">Cook Book</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
@@ -54,41 +53,19 @@
                             Welcome, Max
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Switch User</a>
-                            <a class="dropdown-item" href="#">Logout</a>
+                            <a class="dropdown-item" href="profile-select.html">Switch User</a>
+                            <a class="dropdown-item" href="login.html">Logout</a>
                         </div>
                     </li>
                 </ul>
             </div>
         </nav>
-        <div class="container-head">
-            <div class="header-item">
-                <h1>Album Overview</h1>
-                <p class="motto"><i>Archive your memories</i></p>
-            </div>
-            <div class="header-item">
-                <form class="album-modify">
-                    <button type="button" id="add-album" class="btn btn-outline-success my-2 my-sm-0">+ New</button>
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                </form>
-            </div>
-        </div>
     </header>
 
     <!-- Main page content -->
-    <main class="container-main">
-        <div class="card">
-            <img src="images/all-images-cover.jpg" class="card-img" alt="Card image">
-            <div class="card-img-overlay d-flex align-items-center">
-                <p class="card-title text-center mx-auto">All Images</p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="images/kids-album-cover1.jpg" class="card-img" alt="Card image">
-            <div class="card-img-overlay d-flex align-items-center">
-                <p class="card-title text-center mx-auto">Kids</p>
-            </div>
-        </div>
+    <!-- refer: https://github.com/edlynvillegas/evo-calendar/blob/master/img/thumbnail.png -->
+    <main>
+        <img src="images/calendar-sample.png" alt="interactive calendar">
     </main>
 
     <!-- Page footer -->
@@ -96,7 +73,7 @@
         <div class="container-footer">
             <div class="footer-info">
                 <a href="#" class="item">Family Planner</a>
-                <a href="#"v class="item">Home</a>
+                <a href="#" v class="item">Home</a>
                 <a href="#" class="item">FAQ</a>
             </div>
             <div class="footer-info">

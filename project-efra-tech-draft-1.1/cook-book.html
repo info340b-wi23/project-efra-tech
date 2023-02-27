@@ -10,13 +10,14 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" href="css/view-recipes.css">
+  <link rel="icon" type="image/x-icon" href="images/icons8-home-page-16.png">
 </head>
 
 <body>
   <!-- Page header -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Our Family</a>
+      <a class="navbar-brand" href="index.html">Our Family</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -24,24 +25,25 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+            <a class="nav-link" href="profile-select.html">Switch User <span class="sr-only"></span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Calendar</a>
+            <a class="nav-link" href="index.html">Calendar</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="photo-album.html" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Albums
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">All Photos</a>
-              <a class="dropdown-item" href="#">Kids</a>
-              <a class="dropdown-item" href="#">Vacation</a>
+              <a class="dropdown-item" href="photo-album.html">View Albums</a>
+              <a class="dropdown-item" href="album-name.html">All Photos</a>
+              <a class="dropdown-item" href="album-name.html">Kids</a>
+              <a class="dropdown-item" href="album-name.html">Vacation</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Cook Book</a>
+            <a class="nav-link" href="cook-book.html">Cook Book</a>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -51,8 +53,8 @@
               Welcome, Max
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Switch User</a>
-              <a class="dropdown-item" href="#">Logout</a>
+              <a class="dropdown-item" href="profile-select.html">Switch User</a>
+              <a class="dropdown-item" href="login.html">Logout</a>
             </div>
           </li>
         </ul>
@@ -65,11 +67,13 @@
       </div>
       <div class="header-item">
         <form class="album-modify">
-          <button type="button" id="add-album" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#uploadModal">+ Upload</button>
+          <button type="button" id="add-album" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal"
+            data-target="#uploadModal">+ Upload</button>
           <input class="form-control" type="search" placeholder="Search" aria-label="Search">
         </form>
         <!-- Modal -->
-        <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="Upload Recipe" aria-hidden="true">
+        <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="Upload Recipe"
+          aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -121,43 +125,54 @@
           </div>
           <div class="modal-body">
             <p>
-              <h4>Headnote</h4>
-              <p>This dish was passed down through our family for generations. Very easy to make and nutritious as well.</p>
-              <h4>Ingredient List</h4>
-              <small>
-                <ul>
-                  <li>Butter (for the baking dish)</li>
-                  <li>Salt and pepper to taste</li>
-                  <li>6 sprigs parsley</li>
-                  <li>3 slices (1/4-inch thick) white sandwich bread, cut or torn into 1-inch pieces</li>
-                  <li>1 cup (2 1/2 ounces) shredded Parmesan cheese</li>
-                  <li>2 tablespoons unsalted butter, melted</li>
-                  <li>2 tablespoons olive oil</li>
-                  <li>2 1/2 pounds flounder fillets, or other mild fish</li>
-                  <li>1 to 2 lemons, cut into wedges (for garnish)</li>
-                </ul>
-              </small>
-              <h4>Steps:</h4>
-              <small>
-                <ol>
-                  <li>Preheat the oven to 425°F. Butter a large (9- by 13-inch) baking dish.</li>
-                  <li>Season the fish on both sides with salt and pepper. Lay them in the baking dish,
-                    overlapping them as necessary so the fillets all fit in the dish.</li>
-                  <li>Strip the leaves from the stems of parsley and add them to a food processor.
-                    (Discard or save the stems for another purpose.) Pulse the leaves until well chopped.
-                    Add the bread and pulse until it forms soft, coarse crumbs - you should have about 2 cups of coarse-ground
-                    breadcrumbs. Add the Parmesan cheese, and pulse to mix. Add the melted butter, olive oil, salt and pepper and
-                    pulse until mixed.(If using prepared breadcrumbs, just finely chop the parsley and toss with the breadcrumbs.
-                    You can also finely chop the Parmesan cheese, if you like, or just toss it with the breadcrumbs as is.)</li>
-                  <li>Spread the breadcrumbs evenly over the fish. Transfer to the oven and bake for 12 to 15 minutes, or until
-                    the center of the fish is opaque when probed with a small knife and the breadcrumbs are golden. If you have an
-                    instant read thermometer, the temperature of the center of the fish should register 135F. If the fish cooks
-                    before the topping browns, turn on the broiler and broil for about one minute. Watch carefully to keep the
-                    breadcrumbs from burning.</li>
-                  <li>With a sharp knife, cut the fish into portions. (You won't be able to serve one single fillet by itself,
-                    since they overlap in the pan and cook into one another.) Transfer to plates and serve with lemon wedges.</li>
-                </ol>
-              </small>
+            <h4>Headnote</h4>
+            <p>This dish was passed down through our family for generations. Very easy to make and nutritious as well.
+            </p>
+            <h4>Ingredient List</h4>
+            <small>
+              <ul>
+                <li>Butter (for the baking dish)</li>
+                <li>Salt and pepper to taste</li>
+                <li>6 sprigs parsley</li>
+                <li>3 slices (1/4-inch thick) white sandwich bread, cut or torn into 1-inch pieces</li>
+                <li>1 cup (2 1/2 ounces) shredded Parmesan cheese</li>
+                <li>2 tablespoons unsalted butter, melted</li>
+                <li>2 tablespoons olive oil</li>
+                <li>2 1/2 pounds flounder fillets, or other mild fish</li>
+                <li>1 to 2 lemons, cut into wedges (for garnish)</li>
+              </ul>
+            </small>
+            <h4>Steps:</h4>
+            <small>
+              <ol>
+                <li>Preheat the oven to 425°F. Butter a large (9- by 13-inch) baking dish.</li>
+                <li>Season the fish on both sides with salt and pepper. Lay them in the baking dish,
+                  overlapping them as necessary so the fillets all fit in the dish.</li>
+                <li>Strip the leaves from the stems of parsley and add them to a food processor.
+                  (Discard or save the stems for another purpose.) Pulse the leaves until well chopped.
+                  Add the bread and pulse until it forms soft, coarse crumbs - you should have about 2 cups of
+                  coarse-ground
+                  breadcrumbs. Add the Parmesan cheese, and pulse to mix. Add the melted butter, olive oil, salt and
+                  pepper and
+                  pulse until mixed.(If using prepared breadcrumbs, just finely chop the parsley and toss with the
+                  breadcrumbs.
+                  You can also finely chop the Parmesan cheese, if you like, or just toss it with the breadcrumbs as
+                  is.)</li>
+                <li>Spread the breadcrumbs evenly over the fish. Transfer to the oven and bake for 12 to 15 minutes, or
+                  until
+                  the center of the fish is opaque when probed with a small knife and the breadcrumbs are golden. If you
+                  have an
+                  instant read thermometer, the temperature of the center of the fish should register 135F. If the fish
+                  cooks
+                  before the topping browns, turn on the broiler and broil for about one minute. Watch carefully to keep
+                  the
+                  breadcrumbs from burning.</li>
+                <li>With a sharp knife, cut the fish into portions. (You won't be able to serve one single fillet by
+                  itself,
+                  since they overlap in the pan and cook into one another.) Transfer to plates and serve with lemon
+                  wedges.</li>
+              </ol>
+            </small>
             </p>
           </div>
         </div><!--end modal-content-->
@@ -172,34 +187,37 @@
           </div>
           <div class="modal-body">
             <p>
-              <h4>Headnote</h4>
-              <p>Quick 15-minute recipe for pan-seared tilapia that's delicious and full of flavor. This
-                simple method of cooking fish fillets is great for a weeknight meal. Serve with fresh veggies.</p>
-              <h4>Ingredient List</h4>
-              <small>
-                <ul>
-                  <li>4 (4 ounce) tilapia fillets</li>
-                  <li>Salt and pepper to taste</li>
-                  <li>1/2 cup all purpose flour</li>
-                  <li>1 tablespoon olive oil</li>
-                  <li>2 tablespoons unsalted butter, melted</li>
-                  <li>1 tablespoon lemon juice</li>
-                  <li>1 teaspoon chopped fresh flat-leaf parsley</li>
-                  <li>1/2 teaspoon chopped fresh thyme</li>
-                </ul>
-              </small>
-              <h4>Steps:</h4>
-              <small>
-                <ol>
-                  <li>Rinse tilapia fillets in cold water and pat dry with paper towels.
-                    Season both sides of each fillet with salt and pepper.</li>
-                  <li>Place flour in a shallow dish. Gently press each fillet into the flour to coat and shake off any excess.</li>
-                  <li>Heat olive oil in a large skillet over medium-high heat. Cook tilapia fillets in the hot oil, in batches if
-                    necessary, until fish flakes easily with a fork, about 4 minutes per side.</li>
-                  <li>Brush the melted butter onto the tilapia fillets in the last minute before removing from the skillet.</li>
-                  <li>Drizzle fillets with lemon juice and garnish with parsley and thyme.</li>
-                </ol>
-              </small>
+            <h4>Headnote</h4>
+            <p>Quick 15-minute recipe for pan-seared tilapia that's delicious and full of flavor. This
+              simple method of cooking fish fillets is great for a weeknight meal. Serve with fresh veggies.</p>
+            <h4>Ingredient List</h4>
+            <small>
+              <ul>
+                <li>4 (4 ounce) tilapia fillets</li>
+                <li>Salt and pepper to taste</li>
+                <li>1/2 cup all purpose flour</li>
+                <li>1 tablespoon olive oil</li>
+                <li>2 tablespoons unsalted butter, melted</li>
+                <li>1 tablespoon lemon juice</li>
+                <li>1 teaspoon chopped fresh flat-leaf parsley</li>
+                <li>1/2 teaspoon chopped fresh thyme</li>
+              </ul>
+            </small>
+            <h4>Steps:</h4>
+            <small>
+              <ol>
+                <li>Rinse tilapia fillets in cold water and pat dry with paper towels.
+                  Season both sides of each fillet with salt and pepper.</li>
+                <li>Place flour in a shallow dish. Gently press each fillet into the flour to coat and shake off any
+                  excess.</li>
+                <li>Heat olive oil in a large skillet over medium-high heat. Cook tilapia fillets in the hot oil, in
+                  batches if
+                  necessary, until fish flakes easily with a fork, about 4 minutes per side.</li>
+                <li>Brush the melted butter onto the tilapia fillets in the last minute before removing from the
+                  skillet.</li>
+                <li>Drizzle fillets with lemon juice and garnish with parsley and thyme.</li>
+              </ol>
+            </small>
             </p>
           </div>
         </div><!--end modal-content-->
@@ -210,7 +228,7 @@
       <button type="button" class="parmesan-button" data-toggle="modal" data-target="#mymodal">
         <img src="images/baked-fish.webp" class="card-img" alt="Card image">
         <div class="card-img-overlay d-flex align-items-center">
-            <p class="card-title text-center mx-auto">Baked Fish with Parmesan Breadcrumbs</p>
+          <p class="card-title text-center mx-auto">Baked Fish with Parmesan Breadcrumbs</p>
         </div>
       </button>
     </div>
@@ -218,7 +236,7 @@
       <button type="button" class="parmesan-button" data-toggle="modal" data-target="#mymodal2">
         <img src="images/pan-seared-tilapia.jpeg" class="card-img" alt="Card image">
         <div class="card-img-overlay d-flex align-items-center">
-            <p class="card-title text-center mx-auto">Pan-Seared Tilapia</p>
+          <p class="card-title text-center mx-auto">Pan-Seared Tilapia</p>
         </div>
       </button>
     </div>
