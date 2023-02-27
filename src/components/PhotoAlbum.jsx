@@ -1,23 +1,28 @@
 import React, { useState } from 'react';
-import { CardThumbnail } from './Cards';
-import PhotoGallery from './PhotoGallery';
+import { Card } from './Cards';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 export default function PhotoAlbum(props) {
 
   return (
-    <div>
-
-      <div className='container'>
-        <div className='row justify-content-md-around mt-5'>
-          <CardThumbnail title='Breakfast at Lakeside' url='./PhotoGallery' type='album'/>
-          <CardThumbnail title='Christmas in Cabo' url='./PhotoGallery' type='album'/>
-          <CardThumbnail title='Christmas in Cabo' url='./PhotoGallery' type='album'/>
-        </div>
-      </div>
-
-    </div>
+    <main class='container-main'>
+        <Card
+          imageUrl="/images/all-images-cover.jpg"
+          title="All Images"
+          linkUrl="album-name.html"
+        />
+        <Card
+          imageUrl="/images/kids-album-cover1.jpg"
+          title="Kids Album"
+          linkUrl="album-name.html"
+        />
+        <Card
+          imageUrl="/images/vacation-album-cover.jpg"
+          title="Vacation Album"
+          linkUrl="album-name.html"
+        />
+    </main>
   );
 }
 

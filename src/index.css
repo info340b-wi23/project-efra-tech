@@ -82,6 +82,53 @@ header .container-head {
   width: 60%;
 }
 
+.container-main {
+    margin-top:0px;
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.container-main>* {
+    width: 15%;
+    margin-left: 6rem;
+    margin-top: 4rem;
+    border: none;
+}
+
+/* cards  */
+
+.card-img {
+    box-shadow: 0px 0px 10px #000000;
+    object-fit: cover;
+    height: 195px;
+    width: 100%;
+}
+
+.card:hover .card-img {
+    opacity: 0.5;
+    cursor: pointer;
+    border: #34005A 10px;
+    border-bottom: 2px solid #34005A;
+}
+
+.card p {
+    font-weight: 300;
+    font-family: "Raleway", "Helvetica", sans-serif;
+    color: white;
+    font-weight: 500;
+    font-size: 32px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.72);
+}
+
+.card {
+    height: 295px;
+    width: 295px;
+}
+
+
 footer {
   margin-top: auto;
   padding-top: 2rem;

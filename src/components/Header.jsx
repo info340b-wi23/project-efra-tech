@@ -5,6 +5,14 @@ import { AddAlbumButton } from "./PhotoAlbum";
 export default function Header(props) {
     const location = useLocation();
     const showJumbotron = location.pathname === "/home/photo-album" || location.pathname === "/home/cook-book";
+    let details = {};
+    if(location.pathname === "/home/photo-album") {
+        details = {headerName:"Photo Album", description: "Archive your memories", image: "/images/album-page-cover.jpg"}
+    }
+    if(location.pathname === "/home/cook-book") {
+        details = {headerName:"Cook Book", description: "One place for Family recipes", image: "/images/cookbook_real_image.jpeg"}
+    }
+    
     return (
         <header>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -42,17 +50,20 @@ export default function Header(props) {
                     </ul>
                 </div>
             </nav>
-            {showJumbotron && <Jumbotron />}
+            {showJumbotron && <Jumbotron details={details}/>}
         </header>
     );
 };
 
-function Jumbotron() {
+function Jumbotron(props) {
+    const {headerName, description, image} = props.details;
+    const link = `url('${image}')`
+    console.log(link)
     return (
-        <div className="container-head">
+        <div className="container-head" style={{ backgroundImage: link }}>
             <div className="header-item">
-                <h1>Album Overview</h1>
-                <p className="motto"><i>Archive your memories</i></p>
+                <h1>{headerName}</h1>
+                <p className="motto"><i>{description}</i></p>
             </div>
             <div className="header-item">
                 <form className="album-modify">
@@ -62,7 +73,5 @@ function Jumbotron() {
                 </form>
             </div>
         </div>
-
     );
-
 }
