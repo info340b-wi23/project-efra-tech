@@ -30,7 +30,6 @@ header .container-head {
     align-items: center;
     justify-content: flex-start;
     height: 20vh;
-    background-image: url('./images/album-page-cover.jpg');
     background-size: cover;
     background-color: #0084af;
     background-position: center;
@@ -82,6 +81,38 @@ header .container-head {
     width: 60%;
 }
 
+.container-head {
+    background-color: rgb(164, 88, 184);
+    height: 17em;
+}
+.card-img {
+    box-shadow: 0px 0px 10px #000000;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.card:hover .card-img {
+    opacity: 0.5;
+    cursor: pointer;
+    border: #34005A 10px;
+    border-bottom: 2px solid #34005A;
+}
+
+.card p {
+    font-weight: 300;
+    font-family: "Raleway", "Helvetica", sans-serif;
+    color: white;
+    font-weight: 500;
+    font-size: 32px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.72);
+}
+
+.card {
+    height: 295px;
+    width: 295px;
+}
+
 footer {
     margin-top: auto;
     padding-top: 2rem;
@@ -120,23 +151,4 @@ footer {
     font-size: 24px;
     line-height: 46px;
     color: #34005A;
-}
-
-.container-head {
-    background-color: rgb(164, 88, 184);
-    height: 17em;
-}
-
-.row .card {
-    background-size: cover;
-    background-color: #f4f4f4;
-    background-position: center;
-    width: 30%;
-}
-
-.row .card:hover {
-    opacity: 0.5;
-    cursor: pointer;
-    border: #34005A 10px;
-    border-bottom: 2px solid #34005A;
 }
