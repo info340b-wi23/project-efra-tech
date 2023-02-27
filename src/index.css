@@ -127,3 +127,16 @@ footer {
     height: 17em;
 }
 
+.row .card {
+    background-size: cover;
+    background-color: #f4f4f4;
+    background-position: center;
+    width: 30%;
+}
+
+.row .card:hover {
+    opacity: 0.5;
+    cursor: pointer;
+    border: #34005A 10px;
+    border-bottom: 2px solid #34005A;
+}
