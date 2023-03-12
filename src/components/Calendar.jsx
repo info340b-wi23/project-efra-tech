@@ -11,7 +11,7 @@ const Calendar = () => {
           RevoCalendar
           style={{
             borderRadius: "5px",
-            border: "5px solid #4F6995",
+            border: "1.5px solid #4F6995",
           }}
           highlightToday={true}
           lang="en"
