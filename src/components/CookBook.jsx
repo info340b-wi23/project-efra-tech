@@ -55,7 +55,7 @@ export default function CookBook(props) {
 
   return (
     <div>
-      <div className='filter-bar d-flex justify-content-between'>
+      <div className='filter-bar'>
         <div>
           <Form>
             {['checkbox'].map((type) => (
@@ -153,6 +153,9 @@ export default function CookBook(props) {
           </Form>
         </div>
       </div>
+
+      <button type="button" className="upload-button my-2 my-sm-0" data-toggle="modal" data-target="#uploadModal" data-whatever="@mdo">Add a recipe</button>
+
       <div className='container-main'>
         {displayedRecipes.map((card) => (
           <Card key={card.id} title={card.title} imageUrl={card.imageUrl} linkUrl="cook-book" filters={card.filters} />
