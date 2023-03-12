@@ -15,8 +15,8 @@ const Calendar = () => {
           }}
           highlightToday={true}
           lang="en"
-          primaryColor="#34005A"
-          secondaryColor="#D7E6EE"
+          primaryColor="#474C7A"
+          secondaryColor="#EBEBEB"
           todayColor="#3B3966"
           textColor="#333333"
           indicatorColor="orange"
