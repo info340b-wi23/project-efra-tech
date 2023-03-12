@@ -3,35 +3,43 @@ import { Card } from './Cards';
 import Form from 'react-bootstrap/Form';
 import { filter } from 'lodash';
 
+import { getDatabase, ref, set as firebaseSet } from 'firebase/database';
+
+// filter options: breakfast, lunch, dinner, dessert, snack, red meat, poultry, seafood, vegetarian, vegan
+
 export default function CookBook(props) {
-  // filter options: breakfast, lunch, dinner, dessert, snack, red meat, poultry, seafood, vegetarian, vegan
+
   const cards = [
     {
-      id: 1,
       imageUrl: "/images/baked-fish.jpeg",
-      title: "Baked Fish with Parmesan Breadcrums",
+      title: "Baked Fish with Parmesan Breadcrumbs",
       linkUrl: "",
-      filters: ['lunch', 'dinner', 'seafood']
+      filters: 'LunchDinnerSeafood'
     },
     {
-      id: 2,
       imageUrl: "/images/pan-seared-tilapia.jpeg",
       title: "Pan Seared Tilapia",
       linkUrl: "",
-      filters: ['lunch', 'dinner', 'seafood']
+      filters: 'LunchDinnerSeafood'
     }
   ];
 
+  // adds hard-coded cards into firebase
+  const db = getDatabase();
+  const recipeListRef = ref(db, 'cookbook/recipeList');
+  firebaseSet(recipeListRef, cards);
+
   const filteredCards = cards.filter((card) => card.title.toLowerCase().startsWith(props.searchQuery.toLowerCase()));
 
-  const [filters, setFilters] = useState([]);
+  const [filters, setFilters] = useState('');
 
   function handleCheckboxClick(evt) {
+    ```Handles state changes for filter bar```
     if(!filters.includes(evt.target.name)){
-      setFilters([...filters, evt.target.name]);
+      setFilters(filters + evt.target.name);
     } else {
       setFilters(
-        filters.filter(filterStr => filterStr !== evt.target.name)
+        filters.replace(evt.target.name, '')
       );
     }
   }
@@ -39,8 +47,9 @@ export default function CookBook(props) {
   let recipesToRender = filteredCards;
   if(filters.length !== 0){
     recipesToRender = filteredCards.filter((recipeObj) => {
-      for(const facet of recipeObj.filters){
-        if(filters.includes(facet)){
+      const recipesArrOfFilterTags = recipeObj.filters.split(/(?=[A-Z])/);
+      for(const facet of recipesArrOfFilterTags){
+        if(filters.includes(facet.toLowerCase())){
           return recipeObj;
         }
       }

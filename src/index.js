@@ -5,7 +5,18 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import './index.css';
 import App from './App';
 
-// ReactDOM.render(<App />, document.getElementById('root'));
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDWtOB1MPwlz3f801ANOFN-YHTuuOV_zCE",
+  authDomain: "ourfamily-dd31a.firebaseapp.com",
+  projectId: "ourfamily-dd31a",
+  storageBucket: "ourfamily-dd31a.appspot.com",
+  messagingSenderId: "901039374069",
+  appId: "1:901039374069:web:e03589b1b3fb6817d04fbc"
+};
+
+const app = initializeApp(firebaseConfig);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
