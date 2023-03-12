@@ -1,4 +1,6 @@
 import React from "react";
+
+
 export function Card({ imageUrl, title, linkUrl }) {
 
     const handleClick = () => {

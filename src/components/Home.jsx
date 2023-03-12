@@ -14,6 +14,7 @@ function Home() {
   const handleSearch = (query) => {
     setSearchQuery(query);
   };
+
   return (
     <div className="App">
       <div className="content">

@@ -3,7 +3,7 @@
 }
 
 nav.navbar {
-  background-color:  rgba(81, 27, 66, 0.8);
+  background-color: rgba(81, 27, 66, 0.8);
   padding: 1%;
   border-bottom: 2px solid rgba(81, 27, 66);
 }
@@ -180,36 +180,17 @@ footer {
 }
 
 .container-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 15vh;
-  background-color: rgba(81, 27, 66, 0.69);
-  border-top: 2px solid rgba(81, 27, 66);
+  height: 7vh;
+  background-color: #ece4da;
+  color: white;
+  font-weight: 300;
+  border-top-right-radius: 20rem;
 }
 
-.footer-info {
-  width: 250px;
-  height: 150px;
-  text-align: center;
-}
-
-.footer-info .item {
-  display: block;
-}
-
-.footer-info a {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 24px;
-  padding-bottom: 8px;
-}
-
-.footer-info a:first-child {
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 46px;
-  color: #34005A;
+.container-footer:hover {
+  color: rgba(81, 27, 66, 0.8);
+  font-size: larger;
+  text-shadow: 1px 1px 2px pink;
 }
 
 .container-head {
@@ -250,6 +231,29 @@ footer {
   outline: blue;
   border: none;
   cursor: pointer;
+}
+
+/* Filterbar */
+
+.filter-bar {
+  background-color: rgba(60, 53, 67, 0.5);
+  background-image: url('./images/cutting-board.jpg');
+  background-position: center;
+  padding-bottom: 1%;
+  padding-top: 0.8%;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding-right: 2.5%;
+  padding-left: 2.5%;
+  border-bottom-right-radius: 8em;
+  border-bottom-left-radius: 8em;
+  border: 5px solid white;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px orange;
+}
+
+.filter-bar input {
+  border: 0.5px solid purple;
 }
 
 @media (min-width: 960px) {
