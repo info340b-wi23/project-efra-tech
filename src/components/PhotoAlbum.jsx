@@ -27,12 +27,28 @@ export default function PhotoAlbum(props) {
 
   const filteredCards = cards.filter((card) => card.title.toLowerCase().startsWith(props.searchQuery.toLowerCase()));
 
+  const [sortButton, setSortButton] = useState('A-Z');
+
+  function handleBtnClick(){
+    if(sortButton === 'A-Z'){
+      setSortButton('Z-A');
+    } else {
+      setSortButton('A-Z');
+    }
+  }
+
   return (
-    <main class='container-main'>
-      {filteredCards.map((card) => (
-        <Card key={card.id} title={card.title} imageUrl={card.imageUrl} linkUrl={card.linkUrl} />
-      ))}
-    </main>
+    <div className='mt-4'>
+      <div className='d-flex mb-5 mt-3'>
+        <button type="button" className="my-sm-0 sort-btn" onClick={handleBtnClick}>{ sortButton }</button>
+        <button type="button" id='search-btn' className="upload-button my-2 my-sm-0" data-toggle="modal" data-target="#uploadModal" data-whatever="@mdo">Add an album</button>
+      </div>
+      <main class='container-main'>
+        {filteredCards.map((card) => (
+          <Card key={card.id} title={card.title} imageUrl={card.imageUrl} linkUrl={card.linkUrl} />
+        ))}
+      </main>
+    </div>
   );
 }
 

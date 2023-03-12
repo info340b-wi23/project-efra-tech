@@ -20,7 +20,7 @@ export default function Header({ onSearch }) {
         details = { headerName: "Photo Album", description: "Archive your memories", image: "/images/album-page-cover.jpg" }
     }
     if (location.pathname === "/home/cook-book") {
-        details = { headerName: "Cook Book", description: "One place for Family recipes", image: "/images/cookbook_real_image.jpeg" }
+        details = { headerName: "Cookbook", description: "One place for Family recipes", image: "/images/cookbook_real_image.jpeg" }
     }
 
     function Jumbotron(props) {
@@ -33,9 +33,8 @@ export default function Header({ onSearch }) {
                     <p className="motto"><i>{description}</i></p>
                 </div>
                 <div className="header-item">
-                    <form className="album-modify">
-                        <button type="button" className="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#uploadModal" data-whatever="@mdo"> + New</button>
-                        <input key="search-input" className="form-control" type="text" placeholder="Search" aria-label="Search" value={query} onChange={handleInputChange} />
+                    <form className="album-modify d-flex">
+                        <input key="search-input" className="form-control mt-4" type="text" placeholder="Search by name.." aria-label="Search" value={query} onChange={handleInputChange} />
                     </form>
                 </div>
             </div>
@@ -62,7 +61,7 @@ export default function Header({ onSearch }) {
                             <a className="nav-link" href="/home/photo-album">Albums</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/home/cook-book">Cook Book</a>
+                            <a className="nav-link" href="/home/cook-book">Cookbook</a>
                         </li>
                     </ul>
                     <ul className="navbar-nav ms-auto">
