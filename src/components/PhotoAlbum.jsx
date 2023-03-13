@@ -28,6 +28,10 @@ export default function PhotoAlbum(props) {
   const filteredCards = cards.filter((card) => card.title.toLowerCase().startsWith(props.searchQuery.toLowerCase()));
 
   const [sortButton, setSortButton] = useState('A-Z');
+  const [modalShow, setModalShow] = useState(false);
+
+  const handleModalClose = () => setModalShow(false);
+  const handleModalShow = () => setModalShow(true);
 
   function handleBtnClick(){
     if(sortButton === 'A-Z'){
@@ -41,46 +45,36 @@ export default function PhotoAlbum(props) {
     <div className='mt-4'>
       <div className='d-flex mb-5 mt-3'>
         <button type="button" className="my-sm-0 sort-btn" onClick={handleBtnClick}>{ sortButton }</button>
-        <button type="button" id='search-btn' className="upload-button my-2 my-sm-0" data-toggle="modal" data-target="#uploadModal" data-whatever="@mdo">Add an album</button>
+        <Button className="upload-button my-2 my-sm-0" onClick={handleModalShow}>Add an album</Button>
+        <Modal
+          show={modalShow}
+          onHide={handleModalClose}
+          size='lg'
+          centered
+        >
+        <Modal.Header closeButton>
+          <Modal.Title>Add another chapter to your memories</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <label for="nameInput">Album Name: </label><br/>
+          <input type="text" id="albumNameInput"/><br/>
+          <label for="input-file-now">Import Images:</label>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleModalClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleModalClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
       </div>
       <main class='container-main'>
         {filteredCards.map((card) => (
           <Card key={card.id} title={card.title} imageUrl={card.imageUrl} linkUrl={card.linkUrl} />
         ))}
       </main>
-    </div>
-  );
-}
-
-// MODAL FOR UPLOADING NOT FUNCTIONING
-//
-export function AddAlbumButton(props) {
-  const [modalShow, setModalShow] = useState(false);
-  return (
-    <div>
-      <Button onClick={() => setModalShow(true)} className="btn btn-outline-success my-2 my-sm-0">+ New</Button>
-      <Modal
-        size="sm"
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-        aria-labelledby="example-modal-sizes-title-sm"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-sm">
-            Small Modal
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <form>
-            <label for="AlbumNameInput">Album Name:</label><br />
-            <input type="text" key="nameInput" className='form-control' /><br />
-            <div className="file-upload-wrapper">
-              <label for="input-file-now">Upload Thumbnail Image:</label>
-              <input type="file" class="form-control-file" id="exampleFormControlFile1" />
-            </div>
-          </form>
-        </Modal.Body>
-      </Modal>
     </div>
   );
 }

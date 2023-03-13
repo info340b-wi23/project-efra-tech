@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Card } from './Cards';
+import { FilterBar } from './CookbookFilter';
+
 import Form from 'react-bootstrap/Form';
 import { filter } from 'lodash';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 import { getDatabase, ref, set as firebaseSet } from 'firebase/database';
 
@@ -24,7 +28,7 @@ export default function CookBook(props) {
     }
   ];
 
-  // adds hard-coded cards into firebase
+  // adds hard-coded cards into firebase -> maybe create a delete option for these?
   const db = getDatabase();
   const recipeListRef = ref(db, 'cookbook/recipeList');
   firebaseSet(recipeListRef, cards);
@@ -32,8 +36,11 @@ export default function CookBook(props) {
   const filteredCards = cards.filter((card) => card.title.toLowerCase().startsWith(props.searchQuery.toLowerCase()));
 
   const [filters, setFilters] = useState('');
+  const [modalShow, setModalShow] = useState(false);
 
-  //handles state changes for filter bar
+  const handleModalClose = () => setModalShow(false);
+  const handleModalShow = () => setModalShow(true);
+
   function handleCheckboxClick(evt) {
     if(!filters.includes(evt.target.name)){
       setFilters(filters + evt.target.name);
@@ -59,7 +66,47 @@ export default function CookBook(props) {
   return (
     <div>
       <FilterBar clickHandle={handleCheckboxClick} />
-      <button type="button" className="upload-button my-2 my-sm-0" data-toggle="modal" data-target="#uploadModal" data-whatever="@mdo">Add a recipe</button>
+
+      <Button className="upload-button my-2 my-sm-0" onClick={handleModalShow}>Add a recipe</Button>
+        <Modal
+          show={modalShow}
+          onHide={handleModalClose}
+          size='xl'
+          centered
+        >
+        <Modal.Header closeButton>
+          <Modal.Title>Add a new page to your family's cookbook</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <form>
+            <div className="form-group mb-4">
+              <label for="recipeName">Name your recipe</label>
+              <textarea className="form-control px-5" key="recipeName" rows="1"></textarea>
+            </div>
+            <div className="form-group mb-4">
+              <label for="recipeHeadnote">Where did this recipe come from?</label>
+              <textarea className="form-control px-5" key="recipeHeadnote" rows="2"></textarea>
+            </div>
+            <div className="form-group mb-4">
+              <label for="recipeIngredientList">List the ingredients</label>
+              <textarea className="form-control px-5" key="recipeIngredientList" rows="4"></textarea>
+            </div>
+            <div className="form-group mb-4">
+              <label for="recipeSteps">List the steps</label>
+              <textarea className="form-control px-5" key="recipeSteps" rows="4"></textarea>
+            </div>
+          </form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleModalClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleModalClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
       <div className='container-main'>
         {recipesToRender.map((card) => (
           <Card key={card.id} title={card.title} imageUrl={card.imageUrl} linkUrl="cook-book" filters={card.filters} />
@@ -69,105 +116,3 @@ export default function CookBook(props) {
   );
 }
 
-function FilterBar(props){
-  return (
-    <div className='filter-bar'>
-      <div>
-        <Form>
-          {['checkbox'].map((type) => (
-            <div key={`inline-${type}`} className="my-1">
-              <Form.Check
-                inline
-                label="Breakfast"
-                type={type}
-                id={`inline-${type}-bre`}
-                name='breakfast'
-                onClick={props.clickHandle}
-              />
-              <Form.Check
-                inline
-                label="Lunch"
-                type={type}
-                name='lunch'
-                id={`inline-${type}-lun`}
-                onClick={props.clickHandle}
-              />
-              <Form.Check
-                inline
-                label="Dinner"
-                type={type}
-                name='dinner'
-                id={`inline-${type}-din`}
-                onClick={props.clickHandle}
-              />
-              <Form.Check
-                inline
-                label="Dessert"
-                name='dessert'
-                type={type}
-                id={`inline-${type}-des`}
-                onClick={props.clickHandle}
-              />
-              <Form.Check
-                inline
-                label="Snack"
-                name='snack'
-                type={type}
-                id={`inline-${type}-sna`}
-                onClick={props.clickHandle}
-              />
-            </div>
-          ))}
-        </Form>
-      </div>
-      <div>
-        <Form>
-          {['checkbox'].map((type) => (
-            <div key={`inline-${type}`} className="my-1">
-              <Form.Check
-                inline
-                label="Red Meat"
-                name='red meat'
-                type={type}
-                id={`inline-${type}-red`}
-                onClick={props.clickHandle}
-              />
-              <Form.Check
-                inline
-                label="Poultry"
-                name='poultry'
-                type={type}
-                id={`inline-${type}-pou`}
-                onClick={props.clickHandle}
-              />
-              <Form.Check
-                inline
-                label="Seafood"
-                name='seafood'
-                type={type}
-                id={`inline-${type}-sea`}
-                onClick={props.clickHandle}
-              />
-              <Form.Check
-                inline
-                label="Vegetarian"
-                name='vegetarian'
-                type={type}
-                id={`inline-${type}-veget`}
-                onClick={props.clickHandle}
-              />
-              <Form.Check
-                inline
-                label="Vegan"
-                name='vegan'
-                type={type}
-                id={`inline-${type}-vegan`}
-                onClick={props.clickHandle}
-              />
-            </div>
-          ))}
-        </Form>
-      </div>
-    </div>
-  )
-}
