@@ -32,7 +32,7 @@ function App(props) {
       </Router>
       <Footer/>
     </div>
-  );x
+  );
 }
 
 export default App;
