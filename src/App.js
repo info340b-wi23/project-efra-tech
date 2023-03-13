@@ -8,7 +8,7 @@ import ProfileSelect from './components/ProfileSelect';
 import AuthControl from './components/AuthControl';
 
 function App(props) {
-  const [currentProfile, setCurrentProfile] = useState(null);
+  const [currentProfile, setCurrentProfile] = useState("default");
 
   return (
     <div>

@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import "../index.css"
 
 
-
 const ProfileSelect = ({setCurrentProfile}) => {
   const navigate = useNavigate();
 
@@ -14,7 +13,7 @@ const ProfileSelect = ({setCurrentProfile}) => {
 
   return (
     <>
-      <div>
+      <div style={{width: "100vw", height:"100vh"}}>
         <div className={"profile-container d-flex"}>
           <main className="profile-card-group d-flex">
             <div className="profile-card" onClick={(e) => handleLogin("CARL")}>
