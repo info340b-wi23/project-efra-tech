@@ -33,8 +33,8 @@ export default function CookBook(props) {
 
   const [filters, setFilters] = useState('');
 
+  //handles state changes for filter bar
   function handleCheckboxClick(evt) {
-    ```Handles state changes for filter bar```
     if(!filters.includes(evt.target.name)){
       setFilters(filters + evt.target.name);
     } else {
