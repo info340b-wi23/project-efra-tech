@@ -4,11 +4,11 @@ import Calendar from './Calendar';
 import CookBook from './CookBook';
 import PhotoAlbum from './PhotoAlbum';
 import ProfileSelect from './ProfileSelect';
-import Header from './Header';
 import PhotoGallery from './PhotoGallery';
 import HomePage from './HomePage';
+import Header from './Header';
 
-function Home() {
+function Home({currentProfile}) {
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearch = (query) => {
@@ -18,7 +18,7 @@ function Home() {
   return (
     <div className="App">
       <div className="content">
-        <Header onSearch={handleSearch}/>
+        <Header onSearch={handleSearch} currentProfile={currentProfile}/>
         <Routes>
           <Route path="/" element={<Navigate to="/home/calendar" />} />
           <Route path="/home-page" element={<HomePage />} />

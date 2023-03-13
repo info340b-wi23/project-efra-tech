@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-export default function Header({ onSearch }) {
+export default function Header({ onSearch, currentProfile }) {
     const location = useLocation();
     const showJumbotron = location.pathname === "/home/photo-album" || location.pathname === "/home/cook-book";
     const [query, setQuery] = useState("");
@@ -68,7 +68,7 @@ export default function Header({ onSearch }) {
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Welcome, Max
+                                Welcome, {currentProfile}
                             </a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a className="dropdown-item" href="/home/profile-select">Switch User</a>

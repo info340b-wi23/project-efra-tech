@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import Register from './components/Register';
+import ProfileSelect from './components/ProfileSelect';
+import AuthControl from './components/AuthControl';
 
 function App(props) {
+  const [currentProfile, setCurrentProfile] = useState(null);
+
   return (
     <div>
       <head>
@@ -18,10 +23,11 @@ function App(props) {
         <link rel="stylesheet" href="css/index.css" />
         <link rel="icon" type="image/x-icon" href="images/icons8-home-page-16.png" />
       </head>
+
       <Router>
         <Routes>
-          <Route exact path="/" element={<Register />} />
-          <Route path="/home/*" element={<Home />} />
+          <Route exact path="/" element={<ProfileSelect setCurrentProfile={setCurrentProfile} />} />
+          <Route path="/home/*" element={<AuthControl currentProfile={currentProfile}><Home currentProfile={currentProfile} /> </AuthControl>} />
         </Routes>
       </Router>
       <Footer/>

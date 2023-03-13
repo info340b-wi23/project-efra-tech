@@ -175,13 +175,26 @@ header .container-head {
   border: none;
 }
 
+/* profile select containers */
+.profile-container {
+  position: relative;
+  height: 150px;
+  width: 150px;
+}
+
+/* profile select cards */
+.profile-card {
+  font-family: "Raleway", "Helvetica", sans-serif;
+}
+
 /* cards  */
 
 .card-img {
   box-shadow: 0px 0px 10px #000000;
   object-fit: cover;
-  height: 195px;
+  height: 100%;
   width: 100%;
+  border-radius: 50%;
 }
 
 .card:hover .card-img {
@@ -197,11 +210,6 @@ header .container-head {
   font-weight: 500;
   font-size: 32px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.72);
-}
-
-.card {
-  height: 295px;
-  width: 295px;
 }
 
 footer {
@@ -231,7 +239,7 @@ footer {
   height: 17em;
 }
 
-.row .card {
+.card {
   background-size: cover;
   background-color: #f4f4f4;
   background-position: center;
