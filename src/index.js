@@ -6,6 +6,8 @@ import './index.css';
 import App from './App';
 
 import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyDWtOB1MPwlz3f801ANOFN-YHTuuOV_zCE",
@@ -17,6 +19,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
