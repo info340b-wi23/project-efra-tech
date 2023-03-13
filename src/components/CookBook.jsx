@@ -36,8 +36,8 @@ export default function CookBook(props) {
   const filteredCards = cards.filter((card) => card.title.toLowerCase().startsWith(props.searchQuery.toLowerCase()));
 
   const [filters, setFilters] = useState('');
-  const [modalShow, setModalShow] = useState(false);
 
+  const [modalShow, setModalShow] = useState(false);
   const handleModalClose = () => setModalShow(false);
   const handleModalShow = () => setModalShow(true);
 
@@ -68,12 +68,12 @@ export default function CookBook(props) {
       <FilterBar clickHandle={handleCheckboxClick} />
 
       <Button className="upload-button my-2 my-sm-0" onClick={handleModalShow}>Add a recipe</Button>
-        <Modal
+      <Modal
           show={modalShow}
           onHide={handleModalClose}
           size='xl'
           centered
-        >
+      >
         <Modal.Header closeButton>
           <Modal.Title>Add a new page to your family's cookbook</Modal.Title>
         </Modal.Header>
@@ -115,4 +115,3 @@ export default function CookBook(props) {
     </div>
   );
 }
-
