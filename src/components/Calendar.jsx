@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Modal, Form, Button } from "react-bootstrap";
 import RevoCalendar from 'revo-calendar';
 import "bootstrap/dist/css/bootstrap.css";
-import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc } from "firebase/firestore";
 
 const Calendar = () => {
   const [showModal, setShowModal] = useState(false);
   const [description, setDescription] = useState("");
   const [date, setDate] = useState(null);
+  const [events, setEvents] = useState([]);
 
   const handleDateClick = (date) => {
     setShowModal(true);
@@ -16,7 +17,6 @@ const Calendar = () => {
 
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
     event.preventDefault();
 
     if (description.trim() === '') {
@@ -27,51 +27,41 @@ const Calendar = () => {
     const db = getFirestore();
     const eventsRef = collection(db, "events");
     try {
-      await addDoc(eventsRef, 
-        {
-          description: description.toString(),
-          date: date.toString(),
-          user: ""
-        }
-      
+      await addDoc(eventsRef, {
+        description: description,
+        date: date.toString(),
+        user: "",
+      }
       );
       setShowModal(false);
       setDescription("");
       setDate(null);
+      fetchEvents();
     } catch (error) {
       console.error('Error writing document: ', error);
     }
   };
 
-  const events = [];
+  useEffect(() => {
+    fetchEvents();
+  }, []);
+
+  async function removeEvents(id) {
+    const db = getFirestore();
+    await deleteDoc(doc(db, "events", id));
+    fetchEvents()
+  }
+
   async function fetchEvents() {
     const db = getFirestore();
-    // Get a reference to the events collection
     const querySnapshot = await getDocs(collection(db, "events"));
-  
-    // Create an empty array to hold the parsed objects  
-    // Loop through the query snapshot and parse each document to an object
-    querySnapshot.forEach((doc) => {
-      // Get the document data as an object
-      const data = doc.data();
-  
-      // Add the document ID to the object as a property
-      data.id = doc.id;
-  
-      // Push the parsed object to the events array
-      events.push(data);
-    });
-  
-    // The events array now contains all the parsed objects
-    return events;
+    const fetchedEvents = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      name: doc.data().description,
+      date: new Date(doc.data().date),
+    }));
+    setEvents(fetchedEvents);
   }
-  
-  // Call the async function and log the result
-  fetchEvents().then((events) => {
-    console.log(events);
-  }).catch((error) => {
-    console.error(error);
-  });
 
   return (
     <main>
@@ -129,6 +119,9 @@ const Calendar = () => {
               handleDateClick(date)
             }
           }
+          deleteEvent={(index)=> {
+            removeEvents(events[index].id)
+          }}
         />
         <Modal show={showModal} onHide={() => setShowModal(false)}>
           <Modal.Header closeButton>
