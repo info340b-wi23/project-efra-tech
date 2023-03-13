@@ -13,6 +13,7 @@ import { getDatabase, ref, set as firebaseSet, push as firebasePush } from 'fire
 
 export default function CookBook(props) {
 
+  // need to get rid of these after Cards is fully functioning
   const cards = [
     {
       imageUrl: "/images/baked-fish.jpeg",
@@ -27,11 +28,6 @@ export default function CookBook(props) {
       filters: 'LunchDinnerSeafood'
     }
   ];
-
-  // // adds hard-coded cards into firebase -> maybe create a delete option for these?
-  // const db = getDatabase();
-  // const recipeListRef = ref(db, 'cookbook/recipeList');
-  // firebaseSet(recipeListRef, cards);
 
   const filteredCards = cards.filter((card) => card.title.toLowerCase().startsWith(props.searchQuery.toLowerCase()));
 
@@ -122,19 +118,19 @@ export default function CookBook(props) {
 
           <Form.Group className="mb-4" controlId="formHeadnote">
             <Form.Label>Where'd this recipe come from?</Form.Label>
-            <Form.Control placeholder="Inspired by dad spilling too much paprika and mom loving it..." onChange={handleHeadnoteEntry}/>
+            <Form.Control placeholder="Inspired by dad spilling too much paprika once and mom loving it..." onChange={handleHeadnoteEntry}/>
           </Form.Group>
 
           <Form.Group className="mb-4" controlId="formIngredients">
             <Form.Label>List the ingredients</Form.Label>
-            <Form.Control placeholder="- Goggles to block onion fumes"  onChange={handleIngredientEntry}/>
-            <Form.Text>For now, separate each of your items with a ';'</Form.Text>
+            <Form.Control placeholder="Yukon Gold Potatoes; Fish Sauce..."  onChange={handleIngredientEntry}/>
+            <Form.Text>For now, separate each of your items with a ;</Form.Text>
           </Form.Group>
 
           <Form.Group className="mb-4" controlId="formSteps">
             <Form.Label>List the steps</Form.Label>
-            <Form.Control placeholder="First, play Zou bisou bisou..." onChange={handleStepsEntry}/>
-            <Form.Text>For now, separate each of your steps with a ';'</Form.Text>
+            <Form.Control placeholder="First, play Zou bisou bisou by Gillian Hills; Next..." onChange={handleStepsEntry}/>
+            <Form.Text>For now, separate each of your steps with a ;</Form.Text>
           </Form.Group>
 
           <Form.Group className="mb-3">
