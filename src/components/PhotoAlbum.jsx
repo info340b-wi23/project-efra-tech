@@ -6,26 +6,26 @@ import Form from 'react-bootstrap/Form';
 
 import { getDatabase, ref, set as firebaseSet, push as firebasePush } from 'firebase/database';
 
-
 export default function PhotoAlbum(props) {
+
 
   const cards = [
     {
       imageUrl: "/images/all-images-cover.jpg",
       title: "All Images",
-      linkUrl: "photo-gallery",
+      albumName: "all-images",
     },
     {
       id: 2,
       imageUrl: "/images/kids-album-cover1.jpg",
       title: "Kids Album",
-      linkUrl: "photo-gallery",
+      albumName: "kids-album",
     },
     {
       id: 3,
       imageUrl: "/images/vacation-album-cover.jpg",
       title: "Vacation Album",
-      linkUrl: "photo-gallery",
+      albumName: "vacation",
     }
   ];
 
@@ -35,11 +35,12 @@ export default function PhotoAlbum(props) {
   const [modalShow, setModalShow] = useState(false);
   const [newAlbum, setNewAlbum] = useState({name: '', color:''})
 
+
   const handleModalClose = () => setModalShow(false);
   const handleModalShow = () => setModalShow(true);
 
-  function handleBtnClick(){
-    if(sortButton === 'A-Z'){
+  function handleBtnClick() {
+    if (sortButton === 'A-Z') {
       setSortButton('Z-A');
     } else {
       setSortButton('A-Z');
@@ -56,6 +57,7 @@ export default function PhotoAlbum(props) {
     console.log(evt.target.value)
   }
   function handleSubmit(evt){
+
     evt.preventDefault();
     handleModalClose();
 
@@ -68,7 +70,7 @@ export default function PhotoAlbum(props) {
   return (
     <div className='mt-4'>
       <div className='d-flex mb-5 mt-3'>
-        <button type="button" className="my-sm-0 sort-btn" onClick={handleBtnClick}>{ sortButton }</button>
+        <button type="button" className="my-sm-0 sort-btn" onClick={handleBtnClick}>{sortButton}</button>
         <Button className="upload-button my-2 my-sm-0" onClick={handleModalShow}>Add an album</Button>
         <Modal
           show={modalShow}
@@ -108,10 +110,11 @@ export default function PhotoAlbum(props) {
           </Button>
         </Modal.Footer>
       </Modal>
+
       </div>
       <main class='container-main'>
         {filteredCards.map((card) => (
-          <Card key={card.id} title={card.title} imageUrl={card.imageUrl} linkUrl={card.linkUrl} />
+          <Card key={card.id} title={card.title} imageUrl={card.imageUrl} albumName={card.albumName} />
         ))}
       </main>
     </div>
