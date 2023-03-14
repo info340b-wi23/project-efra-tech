@@ -5,20 +5,6 @@ import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc } from "fireb
 
 
 export default function RecipePage(props){
-  const recipeParam = useParams().recipeName; //REPLACE THIS WITH CORRECT VALUE
-
-  let renderedRecipe = 'No recipe found';
-
-  useEffect(() => {
-    fetchRecipe();
-  }, []);
-
-  async function fetchRecipe() {
-    const db = getFirestore();
-    const querySnapshot = await getDocs(collection(db, "recipes"));
-    const fetchedRecipe = querySnapshot.docs.filter(doc => {doc.name === 'Baked Fish with Parmesan Breadcrumbs'});
-    renderedRecipe = fetchedRecipe;
-  }
 
   return(
     <div className='container-main'>
