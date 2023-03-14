@@ -179,7 +179,7 @@ header .container-head {
 .profile-container {
   display: flex;
   justify-content: space-around;
-  padding-top: 12%;
+  padding-top: 1%;
 }
 
 /* profile select cards */
