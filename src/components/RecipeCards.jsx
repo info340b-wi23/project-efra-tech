@@ -9,9 +9,9 @@ export function RecipeCards({ id, recipeName }) {
     };
 
     return (
-        <div className="recipe-card card">
-          <Link to={`/home/cook-book/${recipeName}`}>
-            <p className="card-title text-center mx-auto">{recipeName}</p>
+        <div className="recipe-card card col-sm-7 col-md-5 col-lg-4 py-4">
+          <Link to={`/home/cook-book/${recipeName}`} className='recipe-link'>
+            <p className="card-title text-center mx-auto my-auto">{recipeName}</p>
           </Link>
         </div>
     );

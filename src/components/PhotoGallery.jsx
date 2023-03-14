@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { getStorage, ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
+import Form from 'react-bootstrap/Form';
 
 export default function PhotoGallery() {
   const [showModal, setShowModal] = useState(false);
@@ -72,14 +73,17 @@ export default function PhotoGallery() {
       <a href="#" className="material-icons floating-btn" onClick={handleShowModal}>
         +
       </a>
-      <Modal show={showModal} onHide={handleCloseModal}>
+      <Modal show={showModal} onHide={handleCloseModal} centered size='md'>
         <Modal.Header closeButton>
           <Modal.Title>Upload Images</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form>
-            <input type="file" multiple onChange={handleFileSelect} />
-          </form>
+          <Form>
+            <Form.Group className="mb-4" controlId="formRecipeName">
+              <Form.Control type="file" multiple onChange={handleFileSelect} />
+              <Form.Text>Hold the 'shift' key to select as many images as you want!</Form.Text>
+            </Form.Group>
+          </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleCloseModal}>

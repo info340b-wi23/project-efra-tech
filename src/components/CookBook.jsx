@@ -98,7 +98,7 @@ export default function CookBook(props) {
     <div>
       <FilterBar clickHandle={handleCheckboxClick} />
 
-      <Button className="upload-button my-2 my-sm-0" onClick={handleModalShow}>Add a recipe</Button>
+      <Button className="upload-btn my-2 my-sm-0 p-3" onClick={handleModalShow}>Add a recipe</Button>
       <Modal
           show={modalShow}
           onHide={handleModalClose}
@@ -154,7 +154,7 @@ export default function CookBook(props) {
         </Modal.Footer>
       </Modal>
 
-      <div className='container-main'>
+      <div className='container d-flex justify-content-around pt-5 mt-5'>
         {recipesToRender.map((card) => (
           <RecipeCards key={card.id} recipeName={card.title} linkUrl="cook-book" filters={card.filters} />
         ))}

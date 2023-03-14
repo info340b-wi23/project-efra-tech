@@ -8,7 +8,7 @@ import ProfileSelect from './components/ProfileSelect';
 import AuthControl from './components/AuthControl';
 
 function App(props) {
-  const [currentProfile, setCurrentProfile] = useState("default");
+  const [currentProfile, setCurrentProfile] = useState("Guest");
 
   return (
     <div>
@@ -28,7 +28,7 @@ function App(props) {
         <Routes>
           <Route exact path="/" element={<ProfileSelect setCurrentProfile={setCurrentProfile} />} />
           <Route path="/register" element={<Register/>}/>
-          <Route path="/home/*" element={<AuthControl currentProfile={currentProfile}><Home currentProfile={currentProfile} /> </AuthControl>} />
+          <Route path="/home/*" element={<AuthControl currentProfile={currentProfile}><Home currentProfile={currentProfile} setCurrentProfile={setCurrentProfile} /> </AuthControl>} />
         </Routes>
       </Router>
       <Footer/>
