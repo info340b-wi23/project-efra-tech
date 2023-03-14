@@ -3,33 +3,33 @@ import React from 'react';
 
 export default function RecipePages(props) {
   return (
-    <main className='container'>
+    <main className='container recipe-page'>
       <div className='my-5 px-2 text-center'>
         <h1>Baked Fish with Parmesan Breadcrumbs</h1>
+        <p className='pt-4'>This dish was passed down through our family for generations. Very easy to make and nutritious as well.</p>
       </div>
-      <div className='recipe-top'>
-        <span className='recipe-headnote-box p-3 row'>
-          <p>This dish was passed down through our family for generations. Very easy to make and nutritious as well.</p>
-        </span>
-        <div className>
-          <h4 className='pb-2'>Ingredients</h4>
-          <div>
-            <p>Butter (for the baking dish)</p>
-            <p>Salt and pepper to taste</p>
-            <p>6 sprigs parsley</p>
-            <p>3 slices (1/4-inch thick) white sandwich bread, cut or torn into 1-inch pieces</p>
-            <p>1 cup (2 1/2 ounces) shredded Parmesan cheese</p>
-            <p>2 tablespoons unsalted butter, melted</p>
-            <p>2 tablespoons olive oil</p>
-            <p>2 1/2 pounds flounder fillets, or other mild fish</p>
-            <p>1 to 2 lemons, cut into wedges (for garnish)</p>
-          </div>
+
+      <div>
+        <h4 className='pb-2'>Ingredients</h4>
+        <div>
+          <p>Butter (for the baking dish)</p>
+          <p>Salt and pepper to taste</p>
+          <p>6 sprigs parsley</p>
+          <p>3 slices (1/4-inch thick) white sandwich bread, cut or torn into 1-inch pieces</p>
+          <p>1 cup (2 1/2 ounces) shredded Parmesan cheese</p>
+          <p>2 tablespoons unsalted butter, melted</p>
+          <p>2 tablespoons olive oil</p>
+          <p>2 1/2 pounds flounder fillets, or other mild fish</p>
+          <p>1 to 2 lemons, cut into wedges (for garnish)</p>
         </div>
-        </div>
-      <div className='mx-5 px-5 mt-5 recipe-steps mb-5 pb-5 text-left'>
+      </div>
+
+      <div className='mx-5 px-5 mt-5 recipe-steps text-left'>
         <h4 className='pb-2'>Steps</h4>
         <ol className='text-left'>
-          <li>Preheat the oven to 425°F. Butter a large (9- by 13-inch) baking dish.</li>
+          <li>
+            Preheat the oven to 425°F. Butter a large (9- by 13-inch) baking dish.
+          </li>
           <li>Season the fish on both sides with salt and pepper. Lay them in the baking dish,
             overlapping them as necessary so the fillets all fit in the dish.</li>
           <li>Strip the leaves from the stems of parsley and add them to a food processor.
