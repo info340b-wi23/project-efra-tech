@@ -13,42 +13,35 @@ const ProfileSelect = ({setCurrentProfile}) => {
 
   return (
     <>
-      <div style={{width: "100vw", height:"100vh"}}>
-        <div className={"profile-container d-flex"}>
-          <main className="profile-card-group d-flex">
-            <div className="profile-card" onClick={(e) => handleLogin("CARL")}>
-                <img src="../images/person_one.jpeg" className="card-img-top" alt="Profile 1"/>
-                <div className="card-body">
-                    <h1 className="card-title">Profile 1</h1>
-                </div>
-            </div>
-            <div className="profile-card" onClick={(e) => handleLogin("NAME1")}>
-                <img src="../images/person_two.jpeg" className="card-img-top" alt="Profile 2"/>
-                <div className="card-body">
-                    <h1 className="card-title">Profile 2</h1>
-                </div>
-            </div>
-            <div className="profile-card" onClick={(e) => handleLogin("NAME2")}>
-                <img src="../images/person_one.jpeg" className="card-img-top" alt="Profile 3"/>
-                <div className="card-body">
-                    <h1 className="card-title">Profile 3</h1>
-                </div>
-            </div>
-            <div className="profile-card" onClick={(e) => handleLogin("NAME3")}>
-                <img src="../images/person_four.jpeg" className="card-img-top" alt="Profile 4"/>
-                <div className="card-body">
-                    <h1 className="card-title">Profile 4</h1>
-                </div>
-            </div>
-            <div className="container d-flex">
-                <div className="align-self-center">
-                    <button className="profile-editor" type="button" style={{"background-color": "#BFB4C7"}}>Edit Profile</button>
-                </div>
-            </div>
-          </main>
-        </div>
+      <div>
+        <main className="profile-card-group container-main profile-container">
+          <div className="card profile-card col-7 col-md-3 col-lg-2" onClick={(e) => handleLogin("CARL")}>
+              <img src="../images/av1.png" className="card-img-top" alt="Profile 1"/>
+              <div className="card-body">
+                  <h1 className="card-title">Profile 1</h1>
+              </div>
+          </div>
+          <div className="card profile-card col-7 col-md-3 col-lg-2" onClick={(e) => handleLogin("NAME1")}>
+              <img src="../images/av2.png" className="card-img-top" alt="Profile 2"/>
+              <div className="card-body">
+                  <h1 className="card-title">Profile 2</h1>
+              </div>
+          </div>
+          <div className="card profile-card col-7 col-md-3 col-lg-2" onClick={(e) => handleLogin("NAME2")}>
+              <img src="../images/av3.png" className="card-img-top" alt="Profile 3"/>
+              <div className="card-body">
+                  <h1 className="card-title">Profile 3</h1>
+              </div>
+          </div>
+          <div className="card profile-card col-7 col-md-3 col-lg-2" onClick={(e) => handleLogin("NAME3")}>
+              <img src="../images/av4.png" className="card-img-top" alt="Profile 4"/>
+              <div className="card-body">
+                  <h1 className="card-title">Profile 4</h1>
+              </div>
+          </div>
+        </main>
+        <button className="profile-editor-btn" type="button">Edit Profile</button>
       </div>
-      <div style={{width: "100%", height: "200px"}}></div>
     </>
   );
 }

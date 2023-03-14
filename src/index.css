@@ -177,17 +177,24 @@ header .container-head {
 
 /* profile select containers */
 .profile-container {
-  position: relative;
-  height: 150px;
-  width: 150px;
-  justify-content: space-evenly;
   display: flex;
-  align-items: center;
+  justify-content: space-around;
+  padding-top: 12%;
 }
 
 /* profile select cards */
-.profile-card {
+.profile-card, .card {
   font-family: "Raleway", "Helvetica", sans-serif;
+  width: 50%;
+}
+
+.profile-card img, .profile-card div {
+  border-radius: 17px;
+}
+
+.profile-card .card-body {
+  background-color: rgba(81, 27, 66, 0.8);
+  color: white;
 }
 
 /* cards  */
@@ -306,14 +313,27 @@ footer {
   height: 1.5em;
 }
 
-.upload-button {
+.upload-btn {
   right: 0;
   position: absolute;
   margin-right: 7%;
-  border: 1px solid purple;
   padding: 1%;
-  color: white;
   background-color: rgba(81, 27, 66, 0.69);
+}
+
+.profile-editor-btn {
+  margin-right: 45%;
+  margin-left: 45%;
+  margin-top: 3%;
+  padding: 2%;
+  font-size: larger;
+  margin-bottom: 20%;
+  border: 1px solid black;
+  background-color: rgba(81, 27, 66, 0.8);
+}
+
+.upload-button, .profile-editor-btn {
+  color: white;
   font-weight: 600;
   border-radius: 4em;
 }
