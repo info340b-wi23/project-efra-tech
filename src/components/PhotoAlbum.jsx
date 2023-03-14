@@ -102,7 +102,7 @@ export default function PhotoAlbum(props) {
       </Modal>
 
       </div>
-      <main class='container d-flex justify-content-between'>
+      <main class='container-main d-flex justify-content-around'>
         {filteredCards.map((card) => (
           <Card key={card.id} title={card.title} imageUrl={card.imageUrl} albumName={card.albumName} />
         ))}
