@@ -38,24 +38,24 @@ export default function PhotoGallery() {
   const handleUpload = async () => {
     const storage = getStorage();
     const albumRef = ref(storage, albumName);
-  
+
     // Loop through selected files and upload each one to the albumRef
     const promises = [];
     for (let i = 0; i < selectedFiles.length; i++) {
       const file = selectedFiles[i];
       const fileName = `${Date.now()}_${file.name}`;
       const fileRef = ref(albumRef, fileName);
-  
+
       promises.push(
         uploadBytes(fileRef, file).then(() => {
           console.log('File uploaded successfully');
         })
       );
     }
-  
+
     // Wait for all uploads to finish before reloading the album
     await Promise.all(promises);
-  
+
     handleCloseModal();
     loadAlbum();
   };
