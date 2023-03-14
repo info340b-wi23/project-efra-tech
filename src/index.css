@@ -336,6 +336,7 @@ footer {
   color: white;
   font-weight: 600;
   border-radius: 4em;
+  margin-right: 20px;
 }
 
 .sort-btn {
@@ -351,6 +352,7 @@ footer {
 
 .upload-button:hover, .sort-btn:hover {
   background-color: rgba(81, 27, 66, 0.34);
+  margin-right: 20px;
 }
 
 /* Recipe Cards */

@@ -77,7 +77,7 @@ export default function PhotoAlbum(props) {
     <div className='mt-4'>
       <div className='d-flex mb-5 mt-3'>
         <button type="button" className="my-sm-0 sort-btn" onClick={handleBtnClick}>{sortButton}</button>
-        <Button className="upload-button my-2 my-sm-0" onClick={handleModalShow}>Add an album</Button>
+        <Button className="upload-button my-2 my-sm-0 ml-2" onClick={handleModalShow}>Add an album</Button>
         <Modal
           show={modalShow}
           onHide={handleModalClose}

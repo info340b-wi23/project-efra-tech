@@ -23,7 +23,6 @@ function Home({ currentProfile }) {
         <Header onSearch={handleSearch} currentProfile={currentProfile} />
         <Routes>
           <Route path="/" element={<Navigate to="/home/calendar" />} />
-          <Route path="/home-page" element={<HomePage />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/photo-album" element={<PhotoAlbum searchQuery={searchQuery} />}/>
           <Route path="/photo-album/:albumName" element={<PhotoGallery />} />
