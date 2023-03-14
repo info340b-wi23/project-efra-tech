@@ -27,6 +27,7 @@ function App(props) {
       <Router>
         <Routes>
           <Route exact path="/" element={<ProfileSelect setCurrentProfile={setCurrentProfile} />} />
+          <Route path="/register" element={<Register/>}/>
           <Route path="/home/*" element={<AuthControl currentProfile={currentProfile}><Home currentProfile={currentProfile} /> </AuthControl>} />
         </Routes>
       </Router>

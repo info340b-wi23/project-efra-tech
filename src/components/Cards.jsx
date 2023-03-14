@@ -1,6 +1,5 @@
 import React from "react";
-import { Routes, Route, Navigate, Link } from "react-router-dom";
-import PhotoGallery from "./PhotoGallery";
+import { Link } from 'react-router-dom';
 
 
 export function Card({ imageUrl, title, albumName }) {
@@ -10,14 +9,13 @@ export function Card({ imageUrl, title, albumName }) {
     };
 
     return (
-        <div className="card" onClick={handleClick}>
-            <img src={imageUrl} className="card-img" alt="Card image" />
-            <div className="card-img-overlay d-flex align-items-center">
-                <p className="card-title text-center mx-auto">{title}</p>
-                <Routes>
-                    <Route path="/photo-album/:albumName" element={<PhotoGallery />} />
-                </Routes>
-            </div>
+        <div className="card">
+            <Link to={`/photo-album/${albumName}`}>
+                <img src={imageUrl} className="card-img" alt="Card image" />
+                <div className="card-img-overlay d-flex align-items-center">
+                    <p className="card-title text-center mx-auto">{title}</p>
+                </div>
+            </Link>
         </div>
     );
 }

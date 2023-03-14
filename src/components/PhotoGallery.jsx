@@ -1,6 +1,14 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import { getStorage, ref } from "firebase/storage";
 
-export default function PhotoGallery(props) {
+
+
+export default function PhotoGallery() {
+  const storage = getStorage();
+  const galleryRef = ref(storage, 'gallery');
+  const album = useParams().album_name; //REPLACE THIS WITH CORRECT VALUE
+
   return (
     <main>
       <div className="gallery">
