@@ -33,7 +33,7 @@ export default function PhotoAlbum(props) {
 
   const [sortButton, setSortButton] = useState('A-Z');
   const [modalShow, setModalShow] = useState(false);
-  const [newAlbum, setNewAlbum] = useState({name: '', color:''})
+  const [newAlbum, setNewAlbum] = useState({name: '', color:'', imageUrls:[]})
 
   const handleModalClose = () => setModalShow(false);
   const handleModalShow = () => setModalShow(true);
@@ -53,7 +53,7 @@ export default function PhotoAlbum(props) {
     newAlbum.color = evt.target.value;
   }
   function handleImagesEntry(evt){
-    console.log(evt.target.value)
+    console.log(evt.target.value);
   }
   function handleSubmit(evt){
     evt.preventDefault();
@@ -64,6 +64,11 @@ export default function PhotoAlbum(props) {
     // firebasePush(recipeListRef, newRecipe);
   }
   console.log(newAlbum);
+
+  // resets empty newAlbum state after modal has been submitted
+  if(newAlbum.name !== ''){
+    setNewAlbum({name: '', color: '', imageUrls:[]});
+  }
 
   return (
     <div className='mt-4'>
@@ -86,14 +91,8 @@ export default function PhotoAlbum(props) {
               <Form.Control placeholder="Christmas at Auntie Jane's" onChange={handleNameEntry}/>
             </Form.Group>
 
-            <Form.Group className="mb-4" controlId="formGallery">
-              <Form.Label>Where'd this recipe come from?</Form.Label>
-              <Form.Control data-mdb-file-upload="file-upload" className='form-control file-upload-input'
-                type="file" multiple onChange={handleImagesEntry}/>
-            </Form.Group>
-
             <Form.Group className="mb-4" controlId="formColorPicker">
-              <Form.Label>Pick the color for your album cover!</Form.Label>
+              <Form.Label>Pick the color for your album cover:</Form.Label>
               <Form.Control data-mdb-file-upload="file-upload" className='form-control-lg form-control-color'
                 value="#b0c9c8" type="color" onChange={handleColorEntry}/>
             </Form.Group>
