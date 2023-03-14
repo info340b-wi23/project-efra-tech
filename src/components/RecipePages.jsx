@@ -1,60 +1,54 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from "react-router-dom";
+import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc } from "firebase/firestore";
 
 
-export default function RecipePages(props) {
+export default function RecipePages() {
+  const recipeName = useParams().recipeName;
+  const [data, setData] = useState({});
+  async function fetchEvents() {
+    const db = getFirestore();
+    const querySnapshot = await getDocs(collection(db, "recipes"));
+    const fetchedData = []
+
+    querySnapshot.docs.map((doc) => (fetchedData.push({
+      id: doc.id,
+      name: doc.data().name,
+      ingredients: doc.data().ingredients,
+      steps: doc.data().steps,
+      headnote: doc.data().headnote
+    })));
+    setData(fetchedData.filter(recipe => recipe.name === `${recipeName}`)[0]);
+  }
+
+  useEffect(() => {
+    fetchEvents();
+  }, []);
+
   return (
-    <main className='container recipe-page'>
+    <main className='container recipe-page'>{console.log(data)}
       <div className='my-5 px-2 text-center'>
-        <h1>Baked Fish with Parmesan Breadcrumbs</h1>
-        <p className='pt-4'>This dish was passed down through our family for generations. Very easy to make and nutritious as well.</p>
+        <h1>{data.name}</h1>
+        <p className='pt-4'>{data.headnote}</p>
       </div>
 
       <div>
         <h4 className='pb-2'>Ingredients</h4>
         <div>
-          <p>Butter (for the baking dish)</p>
-          <p>Salt and pepper to taste</p>
-          <p>6 sprigs parsley</p>
-          <p>3 slices (1/4-inch thick) white sandwich bread, cut or torn into 1-inch pieces</p>
-          <p>1 cup (2 1/2 ounces) shredded Parmesan cheese</p>
-          <p>2 tablespoons unsalted butter, melted</p>
-          <p>2 tablespoons olive oil</p>
-          <p>2 1/2 pounds flounder fillets, or other mild fish</p>
-          <p>1 to 2 lemons, cut into wedges (for garnish)</p>
+          {data.ingredients && data.ingredients.split(";").map((ingredient, index) => (
+            <p key={index}>{ingredient.trim()}</p>
+          ))}
         </div>
       </div>
 
       <div className='mx-5 px-5 mt-5 recipe-steps text-left'>
         <h4 className='pb-2'>Steps</h4>
         <ol className='text-left'>
-          <li>
-            Preheat the oven to 425°F. Butter a large (9- by 13-inch) baking dish.
-          </li>
-          <li>Season the fish on both sides with salt and pepper. Lay them in the baking dish,
-            overlapping them as necessary so the fillets all fit in the dish.</li>
-          <li>Strip the leaves from the stems of parsley and add them to a food processor.
-            (Discard or save the stems for another purpose.) Pulse the leaves until well chopped.
-            Add the bread and pulse until it forms soft, coarse crumbs - you should have about 2 cups of
-            coarse-ground
-            breadcrumbs. Add the Parmesan cheese, and pulse to mix. Add the melted butter, olive oil, salt and
-            pepper and
-            pulse until mixed.(If using prepared breadcrumbs, just finely chop the parsley and toss with the
-            breadcrumbs.
-            You can also finely chop the Parmesan cheese, if you like, or just toss it with the breadcrumbs as
-            is.)</li>
-          <li>Spread the breadcrumbs evenly over the fish. Transfer to the oven and bake for 12 to 15 minutes, or
-            until
-            the center of the fish is opaque when probed with a small knife and the breadcrumbs are golden. If you
-            have an
-            instant read thermometer, the temperature of the center of the fish should register 135F. If the fish
-            cooks
-            before the topping browns, turn on the broiler and broil for about one minute. Watch carefully to keep
-            the
-            breadcrumbs from burning.</li>
-          <li>With a sharp knife, cut the fish into portions. (You won't be able to serve one single fillet by
-            itself,
-            since they overlap in the pan and cook into one another.) Transfer to plates and serve with lemon
-            wedges.</li>
+        <div>
+          {data.ingredients && data.steps.split(";").map((step, index) => (
+            <li key={index}>{step.trim()}</li>
+          ))}
+        </div>
         </ol>
       </div>
     </main>

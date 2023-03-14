@@ -27,8 +27,7 @@ function Home({ currentProfile, setCurrentProfile }) {
           <Route path="/photo-album" element={<PhotoAlbum searchQuery={searchQuery} />}/>
           <Route path="/photo-album/:albumName" element={<PhotoGallery />} />
           <Route path="/cook-book" element={<CookBook searchQuery={searchQuery} />} />
-          {/* <Route path="/cook-book/:recipeName" element={<RecipePage />} /> */}
-          <Route path="/recipe-page" element={<RecipePages />} />
+          <Route path="/cook-book/:recipeName" element={<RecipePages />} />
           <Route path="/profile-select" element={<ProfileSelect />} />
           <Route path="/photo-gallery" element={<PhotoGallery />} />
         </Routes>
