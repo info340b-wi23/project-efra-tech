@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card } from './Cards';
+import { RecipeCards } from './RecipeCards';
 import { FilterBar } from './CookbookFilter';
 
 import Form from 'react-bootstrap/Form';
@@ -156,7 +156,7 @@ export default function CookBook(props) {
 
       <div className='container-main'>
         {recipesToRender.map((card) => (
-          <Card key={card.id} title={card.title} imageUrl={card.imageUrl} linkUrl="cook-book" filters={card.filters} />
+          <RecipeCards key={card.id} recipeName={card.title} linkUrl="cook-book" filters={card.filters} />
         ))}
       </div>
     </div>
