@@ -353,6 +353,13 @@ footer {
   background-color: rgba(81, 27, 66, 0.34);
 }
 
+/* Recipe Cards */
+.recipe-cards {
+  background-color: gray;
+  color: white;
+  width: 10%;
+}
+
 @media (min-width: 960px) {
   .gallery {
     display: grid;
