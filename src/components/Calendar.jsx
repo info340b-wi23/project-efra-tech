@@ -64,7 +64,7 @@ const Calendar = () => {
   }
 
   return (
-    <main>
+    <main className='mt-5 pt-5'>
       <div className="calendar">
         <
           RevoCalendar

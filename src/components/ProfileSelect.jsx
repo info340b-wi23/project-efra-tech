@@ -13,12 +13,12 @@ const ProfileSelect = ({setCurrentProfile}) => {
 
   return (
     <>
-      <div>
+      <div className='text-center'>
         <div className='container-head home-banner mx-5 my-4 pl-3'>
           <h1>This is OurFamily</h1>
           <h3>Well, technically <i>your</i> family.</h3>
         </div>
-        <h2 className='m-5'>Who's Here?</h2>
+        <h2 className='mt-5'>Who's Here?</h2>
         <main className="profile-card-group container-main profile-container">
           <div className="card profile-card col-sm-4 col-md-2" onClick={(e) => handleLogin("Linda")}>
               <img src="../images/av1.png" className="card-img-top" alt="Profile 1"/>

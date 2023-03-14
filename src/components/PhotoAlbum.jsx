@@ -32,21 +32,12 @@ export default function PhotoAlbum(props) {
 
   const filteredCards = cards.filter((card) => card.title.toLowerCase().startsWith(props.searchQuery.toLowerCase()));
 
-  const [sortButton, setSortButton] = useState('A-Z');
   const [modalShow, setModalShow] = useState(false);
   const [newAlbum, setNewAlbum] = useState({name: '', color:'', imageUrls:[]})
 
 
   const handleModalClose = () => setModalShow(false);
   const handleModalShow = () => setModalShow(true);
-
-  function handleBtnClick() {
-    if (sortButton === 'A-Z') {
-      setSortButton('Z-A');
-    } else {
-      setSortButton('A-Z');
-    }
-  }
 
   function handleNameEntry(evt){
     newAlbum.name = evt.target.value;
@@ -76,8 +67,7 @@ export default function PhotoAlbum(props) {
   return (
     <div className='mt-4'>
       <div className='d-flex mb-5 mt-3'>
-        <button type="button" className="my-sm-0 sort-btn" onClick={handleBtnClick}>{sortButton}</button>
-        <Button className="upload-button my-2 my-sm-0 ml-2" onClick={handleModalShow}>Add an album</Button>
+        <Button className="upload-btn my-2 my-sm-0 ml-2 p-3" onClick={handleModalShow}>Add an album</Button>
         <Modal
           show={modalShow}
           onHide={handleModalClose}
@@ -112,7 +102,7 @@ export default function PhotoAlbum(props) {
       </Modal>
 
       </div>
-      <main class='container-main'>
+      <main class='container d-flex justify-content-between'>
         {filteredCards.map((card) => (
           <Card key={card.id} title={card.title} imageUrl={card.imageUrl} albumName={card.albumName} />
         ))}
