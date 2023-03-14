@@ -1,36 +1,95 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import { getStorage, ref } from "firebase/storage";
+import React, { useState, useEffect } from "react";
+import { Modal, Button } from "react-bootstrap";
+import { useParams } from "react-router-dom";
+import { getStorage, ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
 
 export default function PhotoGallery() {
-  const storage = getStorage();
-  const galleryRef = ref(storage, 'gallery');
-  const album = useParams().albumName; //REPLACE THIS WITH CORRECT VALUE
+  const [showModal, setShowModal] = useState(false);
+  const [selectedFiles, setSelectedFiles] = useState([]);
+  const albumName = useParams().albumName;
+
+  const handleShowModal = () => setShowModal(true);
+  const handleCloseModal = () => setShowModal(false);
+
+  const handleFileSelect = (event) => {
+    setSelectedFiles(event.target.files);
+  };
+  const [albumImages, setAlbumImages] = useState([]);
+
+  useEffect(() => {
+    loadAlbum();
+  }, [albumName]);
+
+  const loadAlbum = async () => {
+    const images = [];
+    const storage = getStorage();
+    const albumRef = ref(storage, albumName);
+    const items = await listAll(albumRef);
+    const promises = items.items.map((itemRef) =>
+      getDownloadURL(itemRef).then((url) => (images.push({
+        key: itemRef.name,
+        url,
+      })))
+    );
+    await Promise.all(promises);
+    setAlbumImages(images.map((image)=>image.url));
+  };
+
+  const handleUpload = async () => {
+    const storage = getStorage();
+    const albumRef = ref(storage, albumName);
+  
+    // Loop through selected files and upload each one to the albumRef
+    const promises = [];
+    for (let i = 0; i < selectedFiles.length; i++) {
+      const file = selectedFiles[i];
+      const fileName = `${Date.now()}_${file.name}`;
+      const fileRef = ref(albumRef, fileName);
+  
+      promises.push(
+        uploadBytes(fileRef, file).then(() => {
+          console.log('File uploaded successfully');
+        })
+      );
+    }
+  
+    // Wait for all uploads to finish before reloading the album
+    await Promise.all(promises);
+  
+    handleCloseModal();
+    loadAlbum();
+  };
 
   return (
     <main>
-      <h2>{album}</h2>
-      <div className="gallery">
-        <div className="gallery-item">
-          <img src="/images/random-family-image1.jpg" alt="a random family image" />
-        </div>
-        <div className="gallery-item">
-          <img src="/images/random-family-image2.jpg" alt="a random family image" />
-        </div>
-        <div className="gallery-item">
-          <img src="/images/vacation-album-cover.jpg" alt="a random family image" />
-        </div>
-        <div className="gallery-item">
-          <img src="/images/kids-album-cover1.jpg" alt="a random family image" />
-        </div>
-        <div className="gallery-item">
-          <img src="/images/all-images-cover.jpg" alt="a random family image" />
-        </div>
-        <div className="gallery-item">
-          <img src="/images/kids-album-image.jpg" alt="a random family image" />
-        </div>
+      <div className="gallery">{console.log(albumImages)}
+        {albumImages.map((image, index) => (
+          <div key={index} className="gallery-item">
+            <img src={image} alt={`image-${index}`} />
+          </div>
+        ))}
       </div>
-      <a href="" className="material-icons floating-btn">add</a>
+      <a href="#" className="material-icons floating-btn" onClick={handleShowModal}>
+        +
+      </a>
+      <Modal show={showModal} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Upload Images</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <form>
+            <input type="file" multiple onChange={handleFileSelect} />
+          </form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleUpload}>
+            Upload
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </main>
   );
 }

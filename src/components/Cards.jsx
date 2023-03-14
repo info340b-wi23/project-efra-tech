@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom';
 
 export function Card({ imageUrl, title, albumName }) {
 
-    const handleClick = () => {
-        window.location.href = `/photo-album/${albumName}`;
-    };
 
     return (
         <div className="card">
